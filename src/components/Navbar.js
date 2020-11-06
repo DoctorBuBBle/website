@@ -45,15 +45,16 @@ const Navbar = class extends React.Component {
               <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
-            <div
+            <button
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
+              onKeyDown={() => this.toggleHamburger()}
             >
               <span />
               <span />
               <span />
-            </div>
+            </button>
           </div>
           <div
             id="navMenu"
@@ -62,9 +63,6 @@ const Navbar = class extends React.Component {
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
                 About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
               </Link>
               <Link className="navbar-item" to="/blog">
                 Blog

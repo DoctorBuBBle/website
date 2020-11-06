@@ -34,7 +34,6 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
   "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
