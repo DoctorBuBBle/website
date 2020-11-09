@@ -1,5 +1,5 @@
 ---
-templateKey: 'skills-page'
+templateKey: skills-page
 title: The Skills you can find in my Cells
 skills:
   - subskills:
@@ -8,4 +8,7 @@ skills:
         image: /img/logo512.png
     skillName: JavaScript
     image: /img/js.png
+  - skillName: Java
+    image: /img/products-grid1.jpg
+    subskills: []
 ---
