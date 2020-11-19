@@ -1,55 +1,64 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import { gsap } from "gsap";
 import "./navigation.scss";
 
 const Navbar = () => {
-  const navRef = React.createRef();
+  const navRef = useRef();
+  const menuTimeline = useRef();
+  const menuBurgerTimeline = useRef();
   const [isActive, setActive] = useState(false);
-  const navBarActiveClass = isActive ? "is-active" : "";
-
-  const toggleHamburger = () => {
-    // toggle the active boolean in the state
-    setActive(!isActive);
-  };
 
   useEffect(() => {
-    const navbarItems = navRef.current.querySelectorAll(
+    const navbarMenu = navRef.current.querySelector(".navbar-menu");
+
+    navbarMenu.style.height = "auto";
+    const originalHeight = navbarMenu.offsetHeight;
+    navbarMenu.style.height = 0;
+
+    const navbarItems = navbarMenu.querySelectorAll(
       ".navbar-item:not(.primary-button):not(.github-link)"
     );
-    const buttons = navRef.current.querySelectorAll(
+    const buttons = navbarMenu.querySelectorAll(
       ".primary-button, .github-link"
     );
-    const animationProps = {
-      opacity: 1,
-      stagger: 0.25,
-      ease: "back",
-      duration: 0.8,
-    };
 
-    if (isActive) {
-      gsap
-        .timeline()
-        .set(navbarItems, { xPercent: -15, opacity: 0 })
-        .set(buttons, { yPercent: 15, opacity: 0 })
-        .to(navbarItems, {
-          xPercent: 0,
-          delay: 0.1,
-          ...animationProps,
-        })
-        .to(buttons, { 
-            yPercent: 0, 
-            ...animationProps 
-        });
+    menuTimeline.current = gsap
+      .timeline({
+        paused: true,
+        defaults: { duration: 0.6, stagger: 0.2, ease: "back" },
+      })
+      .to(navbarMenu, {
+        id: "navbarHeight",
+        height: originalHeight,
+      })
+      .to(navbarItems, { opacity: 1, xPercent: 15 }, "-=0.3")
+      .to(buttons, { opacity: 1, yPercent: 15 }, "-=0.25");
+
+  }, [menuTimeline, menuBurgerTimeline]);
+
+  const toggleHamburger = () => {
+    if (menuTimeline.current) {
+      if (menuTimeline.current.paused()) {
+        menuTimeline.current.resume();
+      } else if (menuTimeline.current.reversed()) {
+        const navbarHeightTween = menuTimeline.current.getById("navbarHeight");
+        navbarHeightTween.duration(navbarHeightTween.vars.duration);
+        menuTimeline.current.timeScale(1).play();
+      } else {
+        // timeline.current.getById("navbarHeight").duration(0.3);
+        menuTimeline.current.timeScale(2).reverse();
+      }
     }
 
-  }, [navRef, isActive]);
+    setActive(!isActive);
+  };
 
   return (
     <nav
       ref={navRef}
-      className={`default-background navbar ${navBarActiveClass}`}
+      className={`default-background navbar ${isActive ? 'is-active' : ''}`}
       role="navigation"
       aria-label="main-navigation"
     >

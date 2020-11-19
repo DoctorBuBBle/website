@@ -74,28 +74,31 @@
     .navbar-menu {
         width: 100vw;
         height: 0;
-        transition: height .25s;
         overflow: hidden;
         display: grid;
         justify-items: center;
         align-items: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 
         .content {
             display: grid;
             justify-items: center;
+            padding: 3em;
         }
 
-        .primary-button {
-            margin-top: 2em;
+        .navbar-item {
+            translate: -15% 0;
+            opacity: 0;
         }
 
-        .github-link {
+        .primary-button, .github-link {
+            translate: 0 -15%;
             margin-top: 2em;
+            opacity: 0;
 
             img {
                 height: 2em;
             }
-            
             &::after {
                 content: none;
             }
@@ -119,9 +122,5 @@
             transform: translateY(-100%) rotate(-45deg) !important;
         }
 
-    }
-
-    .navbar-menu {
-        height: calc(100vh - 60px);
     }
 }
