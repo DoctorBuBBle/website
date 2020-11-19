@@ -1,96 +1,110 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React, { useEffect, useState } from "react";
+import { Link } from "gatsby";
+import github from "../img/github-icon.svg";
+import { gsap } from "gsap";
+import "./navigation.scss";
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
-  }
+const Navbar = () => {
+  const navRef = React.createRef();
+  const [isActive, setActive] = useState(false);
+  const navBarActiveClass = isActive ? "is-active" : "";
 
-  toggleHamburger = () => {
+  const toggleHamburger = () => {
     // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+    setActive(!isActive);
+  };
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <button
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-              onKeyDown={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </button>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
+  useEffect(() => {
+    const navbarItems = navRef.current.querySelectorAll(
+      ".navbar-item:not(.primary-button):not(.github-link)"
+    );
+    const buttons = navRef.current.querySelectorAll(
+      ".primary-button, .github-link"
+    );
+    const animationProps = {
+      opacity: 1,
+      stagger: 0.25,
+      ease: "back",
+      duration: 0.8,
+    };
+
+    if (isActive) {
+      gsap
+        .timeline()
+        .set(navbarItems, { xPercent: -15, opacity: 0 })
+        .set(buttons, { yPercent: 15, opacity: 0 })
+        .to(navbarItems, {
+          xPercent: 0,
+          delay: 0.1,
+          ...animationProps,
+        })
+        .to(buttons, { 
+            yPercent: 0, 
+            ...animationProps 
+        });
+    }
+
+  }, [navRef, isActive]);
+
+  return (
+    <nav
+      ref={navRef}
+      className={`default-background navbar ${navBarActiveClass}`}
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      <div className="navbar-control">
+        <div className="navbar-brand">
+          <h1>Paas</h1>
+          <h2>Way better than a platform as a service</h2>
         </div>
-      </nav>
-    )
-  }
-}
+        {/* Hamburger menu */}
+        <button
+          className="navbar-burger"
+          data-target="navMenu"
+          onClick={toggleHamburger}
+          onKeyDown={toggleHamburger}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
 
-export default Navbar
+      <div className="navbar-menu white-block">
+        <div className="content">
+          <Link className="navbar-item" to="/blog">
+            Blog
+          </Link>
+          <Link className="navbar-item" to="/#about">
+            About
+          </Link>
+          <Link className="navbar-item" to="/#career">
+            My Career
+          </Link>
+          <Link className="navbar-item" to="/#skills">
+            My Technology Radar
+          </Link>
+          <Link className="navbar-item" to="/impressum">
+            Impressum – Legal Notice
+          </Link>
+          <Link className="navbar-item primary-button" to="/contact">
+            Get in touch
+          </Link>
+          <a
+            className="navbar-item github-link"
+            href="https://github.com/DoctorBuBBle"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <img src={github} alt="Github" />
+            </span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

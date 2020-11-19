@@ -7825,6 +7825,11 @@
     "section-matter" "^1.0.0"
     "strip-bom-string" "^1.0.0"
 
+"gsap@^3.5.1":
+  "integrity" "sha512-EMV0RSUKZNeTUzLKAizGlwxVOUyif3/g8I3S1aA/hf3gbqwBvmQ02x1RdTBQNQMOpHCVBv9y/vaHwfctoAg8zw=="
+  "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.5.1.tgz"
+  "version" "3.5.1"
+
 "gud@^1.0.0":
   "integrity" "sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw=="
   "resolved" "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz"

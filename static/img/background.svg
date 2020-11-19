@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 638">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Unbenannter_Verlauf_9);
+      }
+
+      .cls-2 {
+        fill: url(#Unbenannter_Verlauf_11);
+      }
+
+      .cls-3 {
+        fill: url(#Unbenannter_Verlauf_9-2);
+      }
+
+      .cls-4 {
+        fill: url(#Unbenannter_Verlauf_9-3);
+      }
+
+      .cls-5 {
+        fill: url(#Unbenannter_Verlauf_9-4);
+      }
+
+      .cls-6 {
+        fill: url(#Unbenannter_Verlauf_9-5);
+      }
+
+      .cls-7 {
+        fill: url(#Unbenannter_Verlauf_9-6);
+      }
+
+      .cls-8 {
+        fill: url(#Unbenannter_Verlauf_9-7);
+      }
+
+      .cls-9 {
+        fill: url(#Unbenannter_Verlauf_9-8);
+      }
+
+      .cls-10 {
+        fill: url(#Unbenannter_Verlauf_9-9);
+      }
+
+      .cls-11 {
+        fill: url(#Unbenannter_Verlauf_9-10);
+      }
+    </style>
+    <linearGradient id="Unbenannter_Verlauf_9" data-name="Unbenannter Verlauf 9" x1="1395.61" y1="316.82" x2="433.63" y2="321.57" gradientUnits="userSpaceOnUse">
+      <stop offset="0.39" stop-color="#001e33"/>
+      <stop offset="1" stop-color="#043f4a"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_11" data-name="Unbenannter Verlauf 11" x1="-82.14" y1="110.82" x2="505.82" y2="698.36" gradientUnits="userSpaceOnUse">
+      <stop offset="0.39" stop-color="#001e33"/>
+      <stop offset="0.7" stop-color="#043f4a"/>
+    </linearGradient>
+    <linearGradient id="Unbenannter_Verlauf_9-2" x1="0" y1="619.54" x2="43.21" y2="619.54" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-3" x1="1876.79" y1="619.54" x2="1920" y2="619.54" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-4" x1="1502.76" y1="72.84" x2="2175.95" y2="741.93" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-5" x1="1017.65" y1="159.18" x2="1762.84" y2="159.18" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-6" x1="1878.14" y1="17.88" x2="1920" y2="17.88" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-7" x1="1016.3" y1="478.24" x2="1764.19" y2="478.24" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-8" x1="715.38" y1="824.97" x2="344.13" y2="451.03" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-9" x1="737.49" y1="-185.06" x2="322.02" y2="185.06" xlink:href="#Unbenannter_Verlauf_9"/>
+    <linearGradient id="Unbenannter_Verlauf_9-10" x1="0" y1="17.88" x2="41.86" y2="17.88" xlink:href="#Unbenannter_Verlauf_9"/>
+  </defs>
+  <title>linux-backgroundElement 1</title>
+  <g id="Ebene_2" data-name="Ebene 2">
+    <g id="Ebene_1-2" data-name="Ebene 1">
+      <polygon class="cls-1" points="1436 318.42 1017.94 638 892.06 638 476.31 320.19 474.07 318.48 474.05 318.46 474 318.42 890.55 0 1019.45 0 1436 318.42"/>
+      <polygon class="cls-2" points="538 318.42 537.96 318.46 525.59 328.86 158.22 638 39 638 0 605 0 25 31 0 159.59 0 525.59 307.98 537.93 318.37 538 318.42"/>
+      <polygon class="cls-3" points="43.21 638 0 638 0 601.08 43.21 638"/>
+      <polygon class="cls-4" points="1920 601.08 1920 638 1876.79 638 1920 601.08"/>
+      <path class="cls-5" d="M1920,32V608l-37.6,30H1736.94L1297.61,318.48l-.08-.06L1275,302,1709.7,0h169.18Z"/>
+      <polygon class="cls-6" points="1762.84 0 1390.24 318.37 1017.65 0 1762.84 0"/>
+      <polygon class="cls-7" points="1920 0 1920 35.77 1878.14 0 1920 0"/>
+      <polygon class="cls-8" points="1764.19 638 1016.3 638 1390.24 318.48 1764.19 638"/>
+      <polygon class="cls-9" points="903.7 638 155.81 638 517.6 328.86 529.75 318.48 531.75 320.19 903.7 638"/>
+      <polygon class="cls-10" points="902.35 0 529.75 318.37 517.6 307.98 157.16 0 902.35 0"/>
+      <polygon class="cls-11" points="41.86 0 0 35.77 0 0 41.86 0"/>
+    </g>
+  </g>
+</svg>

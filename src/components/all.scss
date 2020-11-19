@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+$blue: #043F4A;
+$darkblue: #122A3B;
+$lightGrey: #E5E5E5;
+$orange: #EC671B;
+
+body, html {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $lightGrey;
+}
+
+@mixin h1 {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    @include h1();
+}
+
+@mixin h2{
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: white;
+}
+
+h2 {
+    @include h2();
+}
+
+@mixin primary-button {
+    background-color: $orange;
+    padding: .5em 1em;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+    &::after {
+        content: none;
+    }
+}
+
+.primary-button { @include primary-button(); }
+
+.white-block {
+    background-color: white;
+
+    h1 {
+        color: $darkblue;
+    }
+    
+    h2 {
+        @include h2();
+        color: $darkblue;
+    }
+
+    a {
+        @include h2();
+        color: $darkblue;
+        text-decoration: none;
+
+        &::after{
+            display: block;
+            content: '';
+            width: 0;
+            border-bottom: 1px solid $darkblue;
+            transition: width .25s;
+        }
+
+        &:hover::after{
+            width: 100%;
+        }
+    }
+
+    .primary-button { @include primary-button(); }
+}
+
+.default-background {
+    background-image: url('/img/background.svg');
+    background-size: 100%;
+}
