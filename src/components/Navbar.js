@@ -48,7 +48,7 @@ const Navbar = () => {
         menuTimeline.current.timeScale(1).play();
       } else {
         // timeline.current.getById("navbarHeight").duration(0.3);
-        menuTimeline.current.timeScale(2).reverse();
+        menuTimeline.current.timeScale(3).reverse();
       }
     }
 

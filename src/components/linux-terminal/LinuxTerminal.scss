@@ -1,0 +1,13 @@
+.linux {
+    box-sizing: border-box;
+    width: 100%;;
+    padding: 15px;
+    background-image: url('/img/linux-background.svg');
+    background-size: cover;
+
+    .linux-terminal {
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+    }   
+}

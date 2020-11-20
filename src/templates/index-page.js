@@ -3,19 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
-import "./start-page.scss";
+import "./index-page.scss";
+import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
 
 export const StartPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
     <section>
-      <div className="linux linux-background">
-        <div className="linux-terminal">
-          <h1>I dont't just build console tools!</h1>
-          <h1>I create amazing user experiences and much more</h1>
-        </div>
-      </div>
+      <LinuxTerminal/>
       <div className="welcome-message">
         <PageContent content={content} />
       </div>
