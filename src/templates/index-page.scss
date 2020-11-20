@@ -1,0 +1,51 @@
+.welcome-section {
+    background-image: url('/img/linux-background.svg');
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    justify-content: stretch;
+    max-height: 600px;
+
+    .linux {
+        background: none;
+        width: 45%;
+        
+        svg {
+            max-height: 530px;
+        }
+    }
+
+    .welcome-wrapper {
+        width: 55%;
+        overflow: hidden;
+    }
+
+    .welcome-message {
+        position: relative;
+        height: 100%;
+        padding: 5em 0;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        p {
+            width: 20.5em;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -100px;
+            height: 100%;
+            border-bottom: 600px solid white;
+            border-left: 100px solid transparent;
+        }
+    }
+
+    .welcome-content {
+        position: relative;
+        z-index: 1;
+    }
+}

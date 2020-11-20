@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
@@ -8,12 +8,19 @@ import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
 
 export const StartPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
+  const welcomeMsgRef = useRef();
+  const moveInWelcomeMsg = () => {
+    if (welcomeMsgRef.current) {
+    }
+  };
 
   return (
-    <section>
-      <LinuxTerminal/>
-      <div className="welcome-message">
-        <PageContent content={content} />
+    <section className="welcome-section">
+      <LinuxTerminal onComplete={moveInWelcomeMsg} />
+      <div ref={welcomeMsgRef} className="welcome-wrapper">
+        <div className="welcome-message white-block">
+          <PageContent className="welcome-content" content={content} />
+        </div>
       </div>
     </section>
   );

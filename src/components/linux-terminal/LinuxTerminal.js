@@ -8,7 +8,7 @@ const linuxTerminalRows = ["./start-website.sh", " "].map((command) =>
   command.split("")
 );
 
-const LinuxTerminal = () => {
+const LinuxTerminal = ({ onComplete }) => {
   const terminalRef = useRef();
   const [animate, setAnimate] = useState(false);
   const [typingProgress, setTypingProgress] = useState({
@@ -24,11 +24,14 @@ const LinuxTerminal = () => {
 
       gsap
         .timeline({ defaults: { duration: 0.5, ease: "back.out(1.7)" } })
-        .to(rectangles[3], { attr: { height: 248.35 } })
+        .to(rectangles[3], { attr: { height: 248.35 }, delay: 0.25 })
         .to(rectangles[2], { attr: { width: 246.34 } })
         .to(rectangles[1], { attr: { height: 260.67 } })
         .to(rectangles[0], { attr: { width: 270.88 } })
-        .to(rectangles[4], { attr: { height: 275.41 } });
+        .to(rectangles[4], {
+          attr: { height: 275.41 },
+          onComplete: onComplete,
+        });
     }
   });
 
@@ -109,9 +112,9 @@ function LinuxTerminalSVG({ host, rows }) {
             `}
         </style>
       </defs>
-      <title>{"linux-terminal-newElement 7"}</title>
-      <g id="LinuxTerminalSVG__Ebene_2" data-name="Ebene 2">
-        <g id="LinuxTerminalSVG__Smartphone">
+      <title>{"Linux Terminal"}</title>
+      <g>
+        <g>
           <path
             className="LinuxTerminalSVG__cls-1"
             d="M0 14h380v264.61a16.5 16.5 0 01-16.5 16.5h-347A16.5 16.5 0 010 278.61V14z"
