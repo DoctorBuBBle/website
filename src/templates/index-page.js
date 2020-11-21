@@ -5,19 +5,32 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import "./index-page.scss";
 import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
+import { gsap } from "gsap";
 
 export const StartPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
   const welcomeMsgRef = useRef();
   const moveInWelcomeMsg = () => {
     if (welcomeMsgRef.current) {
+      const helloMsg = welcomeMsgRef.current.querySelector(".welcome-wrapper");
+      const terminal = welcomeMsgRef.current.querySelector(".linux");
+      
+      gsap
+        .timeline({ defaults: { duration: 1, ease: "power1.out" } })
+        .to(terminal, {width: "50%" }, 0)
+        .to(
+          helloMsg,
+          { x: (helloMsg.offsetWidth + 100) * -1 },
+          0
+        );
+        
     }
   };
 
   return (
-    <section className="welcome-section">
+    <section ref={welcomeMsgRef} className="welcome-section">
       <LinuxTerminal onComplete={moveInWelcomeMsg} />
-      <div ref={welcomeMsgRef} className="welcome-wrapper">
+      <div className="welcome-wrapper">
         <div className="welcome-message white-block">
           <PageContent className="welcome-content" content={content} />
         </div>

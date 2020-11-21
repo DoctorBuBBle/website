@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./LinuxTerminal.scss";
 import PropTypes from "prop-types";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { gsap } from "gsap";
 
 const linuxTerminalRows = ["./start-website.sh", " "].map((command) =>
@@ -16,14 +16,22 @@ const LinuxTerminal = ({ onComplete }) => {
     text: [],
   });
 
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        host
+      }
+    }
+  `);
+
   useEffect(() => {
-    if (animate) {
+    if (animate && terminalRef.current) {
       const rectangles = terminalRef.current.querySelectorAll(
         ".LinuxTerminalSVG-white-rect rect"
       );
 
       gsap
-        .timeline({ defaults: { duration: 0.5, ease: "back.out(1.7)" } })
+        .timeline({ defaults: { duration: 0.4, ease: "none" } })
         .to(rectangles[3], { attr: { height: 248.35 }, delay: 0.25 })
         .to(rectangles[2], { attr: { width: 246.34 } })
         .to(rectangles[1], { attr: { height: 260.67 } })
@@ -36,7 +44,15 @@ const LinuxTerminal = ({ onComplete }) => {
   });
 
   useEffect(() => {
+    if (typingProgress.index >= linuxTerminalRows.length) {
+      return;
+    }
+
     const intervalId = setInterval(() => {
+      if (typingProgress.index >= linuxTerminalRows.length) {
+        return;
+      }
+
       setTypingProgress((progress) => {
         const letter = (linuxTerminalRows[progress.index] || []).shift();
         let updatedText = [...progress.text];
@@ -61,28 +77,14 @@ const LinuxTerminal = ({ onComplete }) => {
     }, 70);
 
     return () => clearInterval(intervalId);
-  }, [typingProgress]);
+  }, [typingProgress, animate]);
 
   return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            host
-          }
-        }
-      `}
-      render={(data) => (
-        <div className="linux">
-          <div ref={terminalRef} className="linux-terminal">
-            <LinuxTerminalSVG
-              host={data?.site?.host}
-              rows={typingProgress.text}
-            />
-          </div>
-        </div>
-      )}
-    />
+    <div className="linux">
+      <div ref={terminalRef} className="linux-terminal">
+        <LinuxTerminalSVG host={data?.site?.host} rows={typingProgress.text} />
+      </div>
+    </div>
   );
 };
 

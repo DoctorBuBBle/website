@@ -2,35 +2,43 @@
     background-image: url('/img/linux-background.svg');
     background-size: cover;
     overflow: hidden;
-    display: flex;
-    justify-content: stretch;
-    max-height: 600px;
+    height: 600px;
+    position: relative;
 
-    .linux {
-        background: none;
-        width: 45%;
-        
-        svg {
-            max-height: 530px;
+    > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and (min-width: 1080px) {
+    .welcome-wrapper {
+            width: calc(50% - 100px);
         }
     }
 
+    .linux {
+        background: none;
+    }
+
     .welcome-wrapper {
-        width: 55%;
-        overflow: hidden;
+        left: calc(100% + 100px);
     }
 
     .welcome-message {
         position: relative;
         height: 100%;
-        padding: 5em 0;
-        margin-left: 100px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-content: center;
+        text-align: justify;
 
         p {
             width: 20.5em;
+            max-width: 100%;
         }
 
         &::after {
@@ -47,5 +55,9 @@
     .welcome-content {
         position: relative;
         z-index: 1;
+        padding: 2.5em 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
