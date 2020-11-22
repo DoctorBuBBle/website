@@ -1,13 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import './Layout.scss'
+import { debounce } from 'lodash'
+
+const reloadPage = debounce(() => window.location.reload(), 150);
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
+
+  useEffect(() => {
+    window.onresize = reloadPage;
+  })
+
   return (
     <div>
       <Helmet>
