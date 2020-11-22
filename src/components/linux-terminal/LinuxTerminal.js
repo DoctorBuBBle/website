@@ -22,7 +22,7 @@ const LinuxTerminal = ({ onComplete }) => {
       );
 
       gsap
-        .timeline({ defaults: { duration: 0.4, ease: "none" } })
+        .timeline({ defaults: { duration: 0.3, ease: "none" } })
         .to(rectangles[3], { attr: { height: 248.35 }, delay: 0.25 })
         .to(rectangles[2], { attr: { width: 246.34 } })
         .to(rectangles[1], { attr: { height: 260.67 } })
