@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./LinuxTerminal.scss";
 import PropTypes from "prop-types";
-import { graphql, useStaticQuery } from "gatsby";
 import { gsap } from "gsap";
 
 const linuxTerminalRows = ["./start-website.sh", " "].map((command) =>
@@ -15,14 +14,6 @@ const LinuxTerminal = ({ onComplete }) => {
     index: 0,
     text: [],
   });
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        host
-      }
-    }
-  `);
 
   useEffect(() => {
     if (animate && terminalRef.current) {
@@ -82,7 +73,7 @@ const LinuxTerminal = ({ onComplete }) => {
   return (
     <div className="linux">
       <div ref={terminalRef} className="linux-terminal">
-        <LinuxTerminalSVG host={data?.site?.host} rows={typingProgress.text} />
+        <LinuxTerminalSVG rows={typingProgress.text} />
       </div>
     </div>
   );
@@ -98,8 +89,13 @@ LinuxTerminal.defaultProps = {
   rows: [],
 };
 
-function LinuxTerminalSVG({ host, rows }) {
+function LinuxTerminalSVG({ rows }) {
+  const [host, setHost] = useState('localhost');
   const user = `guest@${host}`;
+
+  useEffect(() => {
+    setHost(window.location.hostname);
+  }, [host]);
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 295.11">
