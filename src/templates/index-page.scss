@@ -86,7 +86,6 @@
   }
 
   .about-me-text {
-    display: block;
     grid-area: text;
   }
 
@@ -99,6 +98,8 @@
     grid-template-areas: "image text text";
     align-items: center;
     justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   @media screen and (max-width: 600px) {

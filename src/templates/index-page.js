@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import "./index-page.scss";
 import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
@@ -8,12 +9,11 @@ import moment from "moment";
 import { MarkdownAsHTML } from "../components/Content";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
-  debugger
   return (
     <div className="index-page default-background">
       <WelcomeSection content={welcome} />
       <AboutSection {...about} />
-      <CareerSection {...career}></CareerSection>
+      <CareerSection careerSteps={career}></CareerSection>
     </div>
   );
 };
@@ -35,7 +35,14 @@ const IndexPage = (data) => {
   );
 };
 
-IndexPage.propTypes = {};
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    welcome: PropTypes.string,
+    about: PropTypes.object,
+    skills: PropTypes.array,
+    career: PropTypes.array,
+  })
+};
 
 export default IndexPage;
 
@@ -80,12 +87,47 @@ export const indexPageQuery = graphql`
   }
 `;
 
-const CareerSection = ({ timestamp, image, text, attachment }) => {
-  return (<section className="career-section">
-    <ul>
-      
-    </ul>
-  </section>);
+const CareerSection = ({ careerSteps }) => {
+  debugger;
+  const list = careerSteps.map((careerStep) => {
+    //image, text, attachment
+    const key = careerStep.timespan.from + careerStep.timespan.to;
+
+    return (
+      <>
+        <li key={key}>
+          <div>
+            <img src={getImageSrc(careerStep.image)} alt="Career step" />
+          </div>
+          <div></div>
+        </li>
+        <li key={key + "_timeline"}></li>
+      </>
+    );
+  });
+
+  return (
+    <section className="career-section">
+      <ul>{list}</ul>
+    </section>
+  );
+};
+
+CareerSection.propTypes = {
+  careerSteps: PropTypes.arrayOf(
+    PropTypes.shape({
+      timespan: PropTypes.shape({
+        from: PropTypes.string,
+        to: PropTypes.string,
+      }),
+      image: PropTypes.any,
+      text: PropTypes.string,
+      attachment: PropTypes.shape({
+        name: PropTypes.string,
+        file: PropTypes.object,
+      }),
+    })
+  ),
 };
 
 const getAge = () => {
@@ -101,18 +143,18 @@ const AboutSection = ({ title, image, text = "" }) => {
       <div>
         <h1>{title}</h1>
         <div className="about-content">
-          <img
-            className="about-me-image"
-            src={
-              !!image?.childImageSharp ? image.childImageSharp.fluid.src : image
-            }
-            alt="Me"
-          />
+          <img className="about-me-image" src={getImageSrc(image)} alt="Me" />
           <p className="about-me-text">{text.replace("[age]", getAge())}</p>
         </div>
       </div>
     </section>
   );
+};
+
+AboutSection.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.any,
+  text: PropTypes.string,
 };
 
 const WelcomeSection = ({ content }) => {
@@ -145,3 +187,10 @@ const WelcomeSection = ({ content }) => {
     </section>
   );
 };
+
+WelcomeSection.propTypes = {
+  content: PropTypes.string.isRequired,
+};
+
+const getImageSrc = (image) =>
+  !!image?.childImageSharp ? image.childImageSharp.fluid.src : image;
