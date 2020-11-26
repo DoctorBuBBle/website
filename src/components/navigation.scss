@@ -1,3 +1,5 @@
+@import '../colors.scss';
+
 .navbar {
     position: fixed;
     top: -1px;
@@ -88,6 +90,7 @@
         }
 
         .navbar-item {
+            color: $darkblue;
             font-size: 1.5em;
             line-height: 1.5em;
             translate: -15% 0;

@@ -6,7 +6,7 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
   const aboutSectionData = {
     title: entry.getIn(["data", "aboutSection", "title"]),
     image: getAsset(entry.getIn(["data", "aboutSection", "image"])),
-    text: entry.getIn(["data","aboutSection","text"]),
+    text: entry.getIn(["data", "aboutSection", "text"]),
   };
 
   const skillsSectionData = widgetsFor("skillsSection").map((skill) =>
@@ -18,18 +18,24 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
       : undefined
   );
 
-  const careerSectionData = widgetsFor("careerSection").map(careerStep => {
-    if (!careerStep) {
-      return undefined;
-    }
-
-    const thisCareerStep = careerStep.toJS();
-    return thisCareerStep;
+  const careerSectionData = widgetsFor("careerSection").map((careerStep) => {
+    return {
+      timestamp: {
+        from: careerStep.getIn(["data", "timespan", "from"]),
+        to: careerStep.getIn(["data", "timespan", "to"]),
+      },
+      image: getAsset(careerStep.getIn(["data", "image"])),
+      text: careerStep.getIn(["data", "text"]),
+      attachment: {
+        name: getAsset(careerStep.getIn(["data", "attachment", "name"])),
+        file: getAsset(careerStep.getIn(["data", "attachment", "file"])),
+      },
+    };
   });
 
   return (
     <IndexPageTemplate
-      welcome={widgetFor("welcomeSection")}
+      welcome={entry.getIn(["data", "welcomeSection"])}
       about={aboutSectionData}
       skills={skillsSectionData}
       career={careerSectionData}

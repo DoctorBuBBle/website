@@ -22,7 +22,7 @@ careerSection:
       file: /img/coffee-gear.png
     timespan:
       from: 2018-06-01T07:00:00.000Z
-      until: 2020-08-31T07:00:00.000Z
+      to: 2020-08-31T07:00:00.000Z
     image: /img/heuft-gebaeude-nebel-l.jpg
     text: >-
       HEUFT SYSTEMTECHNIK GMBH

@@ -3,31 +3,34 @@ import Layout from "../components/Layout";
 import "./index-page.scss";
 import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
 import { gsap } from "gsap";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
+import moment from "moment";
+import { MarkdownAsHTML } from "../components/Content";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
+  debugger
   return (
     <div className="index-page default-background">
-      <WelcomeSection
-        h1="Hello I’m Sebastian Paas"
-        h2="A full-stack web developer from Germany."
-        content="I am passionate about building beautiful web interfaces. With or without animations. But I don’t just play with JavaScript and CSS in the Browser, find out what else I already know on my skills page. Everything else I can learn on the fly."
-      />
-      <AboutSection
-        title="About Me"
-        image="/img/Paas Sebastian_pp.png"
-        text="I am a 23 Years old Software developer how lover learning and programming. Besides programming I like painting minis and carring for my Aquarium and If there isn’t a global Pandemic I travel as much as I can."
-      />
+      <WelcomeSection content={welcome} />
+      <AboutSection {...about} />
+      <CareerSection {...career}></CareerSection>
     </div>
   );
 };
 
 IndexPageTemplate.propTypes = {};
 
-const IndexPage = () => {
+const IndexPage = (data) => {
+  const pageData = data?.data?.markdownRemark?.frontmatter;
+
   return (
     <Layout>
-      <IndexPageTemplate />
+      <IndexPageTemplate
+        welcome={pageData?.welcomeSection}
+        about={pageData?.aboutSection}
+        skills={pageData?.skills}
+        career={pageData?.careerSection}
+      />
     </Layout>
   );
 };
@@ -35,19 +38,60 @@ const IndexPage = () => {
 IndexPage.propTypes = {};
 
 export default IndexPage;
-/*
-export const startPageQuery = graphql`
-  query StartPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+
+export const indexPageQuery = graphql`
+  query IndexPageQuery {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
+        welcomeSection
+        careerSection {
+          attachment {
+            name
+            file {
+              publicURL
+            }
+          }
+          image {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+          text
+          timespan {
+            from
+            to
+          }
+        }
+        aboutSection {
+          image {
+            childImageSharp {
+              fluid(quality: 100) {
+                src
+              }
+            }
+          }
+          text
+          title
+        }
       }
     }
   }
 `;
-*/
-const AboutSection = ({ title, image, text }) => {
+
+const CareerSection = ({ timestamp, image, text, attachment }) => {
+  return <section className="career-section"></section>;
+};
+
+const getAge = () => {
+  const now = moment();
+  const birthday = moment("1997-04-17").startOf("day");
+  const duration = moment.duration(now.diff(birthday));
+  return Math.floor(duration.asYears());
+};
+
+const AboutSection = ({ title, image, text = "" }) => {
   return (
     <section className="about-section">
       <div>
@@ -56,18 +100,18 @@ const AboutSection = ({ title, image, text }) => {
           <img
             className="about-me-image"
             src={
-              !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+              !!image?.childImageSharp ? image.childImageSharp.fluid.src : image
             }
             alt="Me"
           />
-          <p className="about-me-text">{text}</p>
+          <p className="about-me-text">{text.replace("[age]", getAge())}</p>
         </div>
       </div>
     </section>
   );
 };
 
-const WelcomeSection = ({ h1, h2, content }) => {
+const WelcomeSection = ({ content }) => {
   const welcomeMsgRef = useRef();
   const moveInWelcomeMsg = () => {
     if (welcomeMsgRef.current) {
@@ -87,9 +131,7 @@ const WelcomeSection = ({ h1, h2, content }) => {
       <div className="welcome-wrapper">
         <div className="welcome-message white-block">
           <div className="welcome-content">
-            <h1>{h1}</h1>
-            <h2>{h2}</h2>
-            <p>{content}</p>
+            <MarkdownAsHTML markdown={content} />
             <Link className="primary-button" to="/contact">
               Get in touch
             </Link>
