@@ -81,7 +81,11 @@ export const indexPageQuery = graphql`
 `;
 
 const CareerSection = ({ timestamp, image, text, attachment }) => {
-  return <section className="career-section"></section>;
+  return (<section className="career-section">
+    <ul>
+      
+    </ul>
+  </section>);
 };
 
 const getAge = () => {
