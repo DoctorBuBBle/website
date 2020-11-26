@@ -45,12 +45,64 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - {
-            label: "Title", name: "title", widget: "string"
-          }
-          - {
-            label: "Body", name: "body", widget: "markdown"
-          }
+          - { label: "Welcome Section", name: "welcomeSection", widget: "markdown" }
+          - label: "About Section"
+            name: "aboutSection"
+            widget: "object"
+            fields: 
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                default: "About me"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Text"
+                name: "text"
+                widget: "text"
+          - label: "My Technology Radar"
+            name: "skillsSection"
+            widget: "list"
+            fields: 
+              - label: "Technology"
+                name: "name"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Tools and Infrastructure", "Languages & Frameworks", "Databases"]
+          - label: "My Career"
+            name: "careerSection"
+            widget: "list"
+            fields: 
+              - label: "Timespan"
+                name: "timespan"
+                widget: "object"
+                fields:
+                  - label: "from"
+                    name: "from"
+                    widget: "date"
+                  - label: "until"
+                    name: "until"
+                    widget: "date"
+              - label: "Image"
+                name: "image"
+                widget: "image"
+              - label: "Text"
+                name: "text"
+                widget: "markdown"
+              - label: "Attachment"
+                name: "attachment"
+                widget: "object"
+                fields: 
+                  - label: "Name"
+                    name: "name"
+                    default: "Job reference"
+                    widget: "string"
+                  - label: "File"
+                    name: "file"
+                    widget: "file"
+                    allow_multiple: false
       - file: "src/pages/contact/index.md"
         label: "Contact"
         name: "contact"

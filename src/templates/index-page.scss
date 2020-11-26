@@ -1,63 +1,115 @@
 .welcome-section {
-    background-image: url('/img/linux-background.svg');
-    background-size: cover;
-    overflow: hidden;
-    height: 600px;
+  background-image: url("/img/linux-background.svg");
+  background-size: cover;
+  overflow: hidden;
+  height: 600px;
+  position: relative;
+
+  > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 1080px) {
+    .welcome-wrapper {
+      width: calc(50% - 100px);
+    }
+  }
+
+  .linux {
+    background: none;
+  }
+
+  .welcome-wrapper {
+    left: calc(100% + 100px);
+  }
+
+  .welcome-message {
     position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 
-    > div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    p {
+      width: 25em;
+      max-width: 100%;
+      text-align: justify;
     }
 
-    @media screen and (min-width: 1080px) {
-    .welcome-wrapper {
-            width: calc(50% - 100px);
-        }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -100px;
+      height: 100%;
+      border-bottom: 600px solid white;
+      border-left: 100px solid transparent;
+    }
+  }
+
+  .welcome-content {
+    position: relative;
+    z-index: 1;
+    padding: 2.5em 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .primary-button {
+    margin: 1em auto 0 auto;
+    width: 8em;
+  }
+}
+
+.about-section {
+  h1 {
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    padding: 0;
+  }
+
+  .about-me-image {
+    grid-area: image;
+    width: 100px;
+    height: 100px;
+    clip-path: circle(49px at center center);
+  }
+
+  .about-me-text {
+    display: block;
+    grid-area: text;
+  }
+
+  .about-content {
+    padding: 0 30px 30px 30px;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "image text text";
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    .about-me-image {
+      margin-bottom: 30px;
     }
 
-    .linux {
-        background: none;
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
-    .welcome-wrapper {
-        left: calc(100% + 100px);
-    }
-
-    .welcome-message {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        text-align: justify;
-
-        p {
-            width: 20.5em;
-            max-width: 100%;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: -100px;
-            height: 100%;
-            border-bottom: 600px solid white;
-            border-left: 100px solid transparent;
-        }
-    }
-
-    .welcome-content {
-        position: relative;
-        z-index: 1;
-        padding: 2.5em 1.5em;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  }
 }

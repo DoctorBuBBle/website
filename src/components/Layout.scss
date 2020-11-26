@@ -9,7 +9,7 @@ $orange: #EC671B;
 
 .default-background {
     background-image: url('/img/background.svg');
-    background-size: 100%;
+    background-size: 500%;
 }
 
 body, html {
@@ -19,9 +19,10 @@ body, html {
     color: $lightGrey;
 
     p {
-        font-size: 1.2em;
+        font-size: 1em;
         text-align: justify;
-        margin: 1em 0;
+        margin: 0;
+        padding: 20px 30px;
     }
 
     div {
@@ -31,6 +32,7 @@ body, html {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 30px;
 }
 
 @mixin h1 {
@@ -57,12 +59,15 @@ h2 {
 }
 
 @mixin primary-button {
+    @include h2();
+    font-family: 'Source Sans Pro', sans-serif;
     background-color: $orange;
-    padding: .5em 1em;
+    padding: .7em 1.5em;
     border: none;
-    color: white;
     text-align: center;
     text-decoration: none;
+    font-weight: 700;    
+    cursor: pointer;
 
     &::after {
         content: none;

@@ -97,7 +97,7 @@ const Navbar = () => {
           <Link className="navbar-item" to="/impressum">
             Impressum – Legal Notice
           </Link>
-          <Link className="navbar-item primary-button" to="/contact">
+          <Link className="primary-button" to="/contact">
             Get in touch
           </Link>
           <a
