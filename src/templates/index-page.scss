@@ -63,7 +63,6 @@
 
   .primary-button {
     margin: 1em auto 0 auto;
-    width: 8em;
   }
 }
 
@@ -112,5 +111,11 @@
       flex-direction: column;
       justify-content: center;
     }
+  }
+}
+
+.technology-radar-section {
+  .marg10 {
+    margin-right: 10px;
   }
 }

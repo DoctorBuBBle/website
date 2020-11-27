@@ -53,39 +53,6 @@ h2 {
     @include h2();
 }
 
-@mixin primary-button {
-    --beforeWidth: 30px;
-    --beforePosition: -40px;
-
-    @include h2();
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: $orange;
-    padding: .7em 1.5em;
-    border: none;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;    
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: var(--beforePosition);
-        height: calc(100% + 1px);
-        width: var(--beforeWidth);
-        background-color: white;
-        border: none;
-        transform: skew(-15deg);
-        opacity: .8;
-    }
-}
-
-.primary-button { @include primary-button(); }
-
 .white-block {
     background-color: white;
     color: $grey;
@@ -99,7 +66,7 @@ h2 {
         color: $darkblue;
     }
 
-    a:not(.primary-button) {
+    a {
         color: $blue;
         text-decoration: none;
         position: relative;
@@ -118,8 +85,6 @@ h2 {
             width: 100%;
         }
     }
-
-    .primary-button { @include primary-button(); }
 }
 
 

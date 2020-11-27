@@ -7,13 +7,14 @@ import { gsap } from "gsap";
 import { graphql } from "gatsby";
 import moment from "moment";
 import { MarkdownAsHTML } from "../components/Content";
-import { GetInTouchButton } from "../components/PrimaryButton";
+import Button, { GetInTouchButton, PrimaryButton } from "../components/Button";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
     <div className="index-page default-background">
       <WelcomeSection content={welcome} />
       <AboutSection {...about} />
+      <TechnologyRadarSection />
       <CareerSection careerSteps={career}></CareerSection>
     </div>
   );
@@ -42,7 +43,7 @@ IndexPage.propTypes = {
     about: PropTypes.object,
     skills: PropTypes.array,
     career: PropTypes.array,
-  })
+  }),
 };
 
 export default IndexPage;
@@ -87,6 +88,18 @@ export const indexPageQuery = graphql`
     }
   }
 `;
+
+const TechnologyRadarSection = () => {
+  return (
+    <section className="technology-radar-section">
+      <PrimaryButton className="marg10">
+        <span>Hello World</span>
+      </PrimaryButton>
+      <GetInTouchButton className="marg10" />
+      <Button className="marg10">Hello World</Button>
+    </section>
+  );
+};
 
 const CareerSection = ({ careerSteps }) => {
   //debugger;

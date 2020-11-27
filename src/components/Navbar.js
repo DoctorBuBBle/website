@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import { gsap } from "gsap";
 import "./navigation.scss";
-import { GetInTouchButton } from "./PrimaryButton";
+import { GetInTouchButton } from "./Button";
 
 const Navbar = () => {
   const navRef = useRef();
