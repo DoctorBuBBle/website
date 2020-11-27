@@ -4,9 +4,10 @@ import Layout from "../components/Layout";
 import "./index-page.scss";
 import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
 import { gsap } from "gsap";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import moment from "moment";
 import { MarkdownAsHTML } from "../components/Content";
+import { GetInTouchButton } from "../components/PrimaryButton";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
@@ -88,7 +89,7 @@ export const indexPageQuery = graphql`
 `;
 
 const CareerSection = ({ careerSteps }) => {
-  debugger;
+  //debugger;
   const list = careerSteps.map((careerStep) => {
     //image, text, attachment
     const key = careerStep.timespan.from + careerStep.timespan.to;
@@ -178,9 +179,7 @@ const WelcomeSection = ({ content }) => {
         <div className="welcome-message white-block">
           <div className="welcome-content">
             <MarkdownAsHTML markdown={content} />
-            <Link className="primary-button" to="/contact">
-              Get in touch
-            </Link>
+            <GetInTouchButton />
           </div>
         </div>
       </div>

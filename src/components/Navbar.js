@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import github from "../img/github-icon.svg";
 import { gsap } from "gsap";
 import "./navigation.scss";
+import { GetInTouchButton } from "./PrimaryButton";
 
 const Navbar = () => {
   const navRef = useRef();
@@ -97,9 +98,7 @@ const Navbar = () => {
           <Link className="navbar-item" to="/impressum">
             Impressum – Legal Notice
           </Link>
-          <Link className="primary-button" to="/contact">
-            Get in touch
-          </Link>
+          <GetInTouchButton />
           <a
             className="navbar-item github-link"
             href="https://github.com/DoctorBuBBle"

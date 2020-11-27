@@ -54,6 +54,9 @@ h2 {
 }
 
 @mixin primary-button {
+    --beforeWidth: 30px;
+    --beforePosition: -40px;
+
     @include h2();
     font-family: 'Source Sans Pro', sans-serif;
     background-color: $orange;
@@ -63,9 +66,21 @@ h2 {
     text-decoration: none;
     font-weight: 700;    
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
-    &::after {
-        content: none;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: var(--beforePosition);
+        height: calc(100% + 1px);
+        width: var(--beforeWidth);
+        background-color: white;
+        border: none;
+        transform: skew(-15deg);
+        opacity: .8;
     }
 }
 
@@ -84,7 +99,7 @@ h2 {
         color: $darkblue;
     }
 
-    a {
+    a:not(.primary-button) {
         color: $blue;
         text-decoration: none;
         position: relative;
