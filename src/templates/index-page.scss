@@ -15,6 +15,8 @@
   background-size: cover;
   overflow: hidden;
   height: 1000px;
+  max-height: 100vh;
+  min-height: 500px;
   position: relative;
 
   > div {

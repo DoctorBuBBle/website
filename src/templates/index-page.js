@@ -59,7 +59,7 @@ export const indexPageQuery = graphql`
           attachment {
             name
             file {
-              publicURL
+              base
             }
           }
           image {
@@ -112,7 +112,10 @@ const CareerSection = ({ careerSteps }) => {
 
     if (!isEmpty(careerStep.attachment)) {
       attachment = (
-        <PrimaryButton newTab={true} href={careerStep.attachment.file.publicURL}>
+        <PrimaryButton
+          newTab={true}
+          href={"/img/" + careerStep.attachment.file.base}
+        >
           {careerStep.attachment.name}
         </PrimaryButton>
       );
@@ -120,7 +123,10 @@ const CareerSection = ({ careerSteps }) => {
 
     return (
       <>
-        <MarkdownAsHTML className="career-step-text" markdown={careerStep.text} />
+        <MarkdownAsHTML
+          className="career-step-text"
+          markdown={careerStep.text}
+        />
         {attachment}
       </>
     );

@@ -52,7 +52,7 @@ careerSection:
       to: 2020-11-30T10:33:24.526Z
     image: /img/sprengnetter_campus.jpg
     text: >-
-      # Sprengnetter Immobilienbewertung GMBH
+      # Sprengnetter Immobilien&shy;bewertung GMBH
 
 
       Die Sprengnetter Immobilienbewertung ist ein modernes, mittelständisches Unternehmen mit rund 250 Mitarbeiterinnen und Mitarbeitern. Mit einer Markterfahrung von fast 40 Jahren gehört Sprengnetter zu den bedeutendsten Kompetenzstellen des deutschen Immobilienbewertunswesens. Unser Komplettangebot rund um die Immobilientbewertung ist einzigartig in Europa und umfasst Gutachten- und Bewertungsdienstleistungen, Beratungsservice, Softwarelösungen, Fachliteratur, Marktforschung, Aus- und Weiterbildung inkl. Sachverständigen Zertifizierung nach ISO 17024. Die großen Spieler der deutschen und internationalen Kreditwirtschaft sowie viele Tausend einzelne Akteure der Immobilienwirtschaft vertauen auf unsere Lösungen. Das Unternehmen verfügt über mehrere Niederlassungen in Deutschland und ist auch in Österreich aktiv.
