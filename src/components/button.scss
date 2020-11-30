@@ -2,7 +2,7 @@
 
 $duration: 0.25s;
 
-.button {
+@mixin button {
   line-height: 1em;
   text-align: center;
   text-decoration: none;
@@ -42,12 +42,14 @@ $duration: 0.25s;
   }
 
   .button-content {
-    padding: 0.7em 1.5em;
     position: relative;
     z-index: 1;
-    
 
     a {
+      display: block;
+      box-sizing: border-box;
+      padding: 0.7em 1.5em;
+      width: 100%;
       color: inherit;
       text-decoration: none;
 
@@ -57,19 +59,31 @@ $duration: 0.25s;
       }
     }
   }
-}
 
-.button:hover .button-background-overlay {
-  width: calc(100% + 50px);
-}
-
-.button:hover {
+  &:hover {
     color: white;
     border-color: white;
+
+    .button-background-overlay {
+      width: calc(100% + 50px);
+    }
+  }
 }
 
-.primary-button {
+@mixin primary-button {
   border-color: $orange;
   background-color: $orange;
   color: white;
+
+  .button-content a {
+    color: white;
+  }
+}
+
+.button {
+  @include button();
+}
+
+.primary-button {
+  @include primary-button();
 }

@@ -1,115 +1,62 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import React from "react";
+import { pageLinks, externalLinks } from "./MenuLinks";
+import "./footer.scss";
+import { PrimaryButton } from "./Button";
+import { gsap } from "gsap";
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
+      <footer className="footer">
+        <div className="footer-back-top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            viewBox="0 0 400 400"
+          >
+            <polygon points="0 400 400 400 200 0" fill="#333333" />
+          </svg>
+          <PrimaryButton
+            onClick={() => {
+              gsap.to(document.documentElement, { scrollTop: 0, duration: 1, ease: "power1.out"});
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.9 21.7">
+              <path fill="#fff" d="M.343 10.243l9.9-9.9 1.414 1.414-9.9 9.9z" />
+              <path fill="#fff" d="M10.757.343l9.9 9.9-1.414 1.414-9.9-9.9z" />
+              <path fill="#fff" d="M.343 20.243l9.9-9.9 1.414 1.414-9.9 9.9z" />
+              <path
+                fill="#fff"
+                d="M10.757 10.343l9.9 9.9-1.414 1.414-9.9-9.9z"
+              />
+            </svg>
+          </PrimaryButton>
         </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-              </div>
-            </div>
+        <div className="footer-content">
+          <div className="footer-navigation">
+            {pageLinks.map((link) => (
+              <PrimaryButton key={link.get("to")} href={link.get("to")}>
+                {link.get("label")}
+              </PrimaryButton>
+            ))}
           </div>
+          <div className="footer-social">
+            {externalLinks.map((link) => (
+              <a
+                key={link.get("to")}
+                target="_blank"
+                href={link.get("to")}
+                className="icon"
+              >
+                {link.get("label")}
+              </a>
+            ))}
+          </div>
+          <div className="footer-copyright">© 2020 Sebastian Paas</div>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;

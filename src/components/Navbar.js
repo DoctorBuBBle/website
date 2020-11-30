@@ -1,9 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
 import { gsap } from "gsap";
 import "./navigation.scss";
+import { Link } from "gatsby";
+import menuLinks from "./MenuLinks";
 import { GetInTouchButton } from "./Button";
+
+const navigationItems = menuLinks.map((link) => {
+  if (link.get("to") === "/contact") {
+    return <GetInTouchButton key={link.get("to")} />;
+  }
+  if (link.get("isSocialLink") === true) {
+    return (
+      <a
+        key="github"
+        className="navbar-item github-link"
+        href={link.get("to")}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span className="icon">{link.get("label")}</span>
+      </a>
+    );
+  }
+
+  return (
+    <Link key={link.get("to")} className="navbar-item" to={link.get("to")}>
+      {link.get("label")}
+    </Link>
+  );
+});
 
 const Navbar = () => {
   const navRef = useRef();
@@ -36,7 +61,6 @@ const Navbar = () => {
       })
       .to(navbarItems, { opacity: 1, xPercent: 15 }, "-=0.3")
       .to(buttons, { opacity: 1, yPercent: 15 }, "-=0.25");
-
   }, [menuTimeline, menuBurgerTimeline]);
 
   const toggleHamburger = () => {
@@ -59,7 +83,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className={`default-background navbar ${isActive ? 'is-active' : ''}`}
+      className={`default-background navbar ${isActive ? "is-active" : ""}`}
       role="navigation"
       aria-label="main-navigation"
     >
@@ -82,34 +106,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-menu white-block">
-        <div className="content">
-          <Link className="navbar-item" to="/blog">
-            Blog
-          </Link>
-          <Link className="navbar-item" to="/#about">
-            About
-          </Link>
-          <Link className="navbar-item" to="/#career">
-            My Career
-          </Link>
-          <Link className="navbar-item" to="/#skills">
-            My Technology Radar
-          </Link>
-          <Link className="navbar-item" to="/impressum">
-            Impressum – Legal Notice
-          </Link>
-          <GetInTouchButton />
-          <a
-            className="navbar-item github-link"
-            href="https://github.com/DoctorBuBBle"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="icon">
-              <img src={github} alt="Github" />
-            </span>
-          </a>
-        </div>
+        <div className="content">{navigationItems}</div>
       </div>
     </nav>
   );

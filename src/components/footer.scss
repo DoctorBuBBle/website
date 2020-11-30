@@ -1,0 +1,90 @@
+@import "./button.scss";
+@import "../colors.scss";
+
+.footer {
+
+  .footer-back-top {
+    $height: 40px;
+
+    height: $height;
+    position: relative;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        translate: -50% 0;
+        margin: 0;
+        
+        .button-content a {
+            padding: 0;
+        }
+    }
+  }
+
+  .footer-content {
+    background-color: $grey;
+    color: white;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "nav nav"
+      "copy social";
+    place-items: end start;
+    row-gap: 50px;
+
+    .footer-navigation {
+      grid-area: nav;
+      display: grid;
+      grid-template-columns: 1fr;
+
+      .primary-button {
+        background-color: $grey;
+        border-color: $grey;
+        margin: 0;
+        padding: 0;
+
+        .button-background-overlay {
+          background-color: $orange;
+        }
+
+        .button-content {
+          text-align: left;
+
+          a {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+
+    .footer-social {
+      grid-area: social;
+      place-self: end;
+
+      .icon {
+        display: block;
+        width: 100px;
+        clip-path: circle(46.00% at center center);
+
+        img {
+          width: 100%;
+          background-color: white;
+        }
+      }
+    }
+
+    .footer-copyright {
+      grid-area: copy;
+    }
+  }
+}

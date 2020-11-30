@@ -11,15 +11,19 @@ const Button = ({ className, href, onClick, children, newTab }) => {
       <div className="button-background-overlay"></div>
       <div className="button-content">
         {href ? (
-          <Link href={href} target={newTab ? "_blank" : "_self"}>
+          <Link to={href} target={newTab ? "_blank" : "_self"}>
             {children}
           </Link>
         ) : (
-          children
+          <a>{children}</a>
         )}
       </div>
     </button>
   );
+};
+
+Button.defaultProps = {
+  className: "",
 };
 
 export default Button;
@@ -29,6 +33,9 @@ export const PrimaryButton = (props) => {
   buttonProps.className += " primary-button";
 
   return <Button {...buttonProps} />;
+};
+PrimaryButton.defaultProps = {
+  className: "",
 };
 
 export const GetInTouchButton = ({ className }) => {

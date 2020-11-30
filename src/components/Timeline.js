@@ -7,23 +7,19 @@ const Timeline = ({ data, getImageSrc, getText, getTimestamp }) => {
     const key = getTimestamp(entry);
 
     return (
-      <>
-        <li class="timeline-step" key={key}>
-          <div className="timeline-part">
-              <div className="timeline-part-point"></div>
-              <div className="timeline-part-line"></div>
+      <li className="timeline-step" key={key}>
+        <div className="timeline-part">
+          <div className="timeline-part-point"></div>
+          <div className="timeline-part-line"></div>
+        </div>
+        <div className="timeline-step">
+          <div className="timeline-step-image">
+            <div className="timeline-step-timestamp">{key}</div>
+            <img src={getImageSrc(entry)} alt="Career step" />
           </div>
-          <div className="timeline-step">
-            <div className="timeline-step-image">
-              <div className="timeline-step-timestamp">{key}</div>
-              <img src={getImageSrc(entry)} alt="Career step" />
-            </div>
-            <div className="timeline-step-text white-block">
-              {getText(entry)}
-            </div>
-          </div>
-        </li>
-      </>
+          <div className="timeline-step-text white-block">{getText(entry)}</div>
+        </div>
+      </li>
     );
   });
 

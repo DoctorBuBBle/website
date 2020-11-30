@@ -92,7 +92,7 @@
             padding: 2em 0 3em 0;
         }
 
-        .navbar-item {
+        .navbar-item:not(.button) {
             color: $darkblue;
             font-size: 1.5rem;
             line-height: 2.2rem;

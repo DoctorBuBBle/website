@@ -8575,7 +8575,7 @@
   "resolved" "https://registry.npmjs.org/immer/-/immer-7.0.15.tgz"
   "version" "7.0.15"
 
-"immutable@^3.7.6", "immutable@^3.8.1 || ^4.0.0-rc.1", "immutable@>=3.6.2", "immutable@>=3.8.1", "immutable@>=3.8.1 || >4.0.0-rc":
+"immutable@^3.7.6", "immutable@^3.8.1 || ^4.0.0-rc.1", "immutable@^3.8.2", "immutable@>=3.6.2", "immutable@>=3.8.1", "immutable@>=3.8.1 || >4.0.0-rc":
   "integrity" "sha1-wkOZUUVbs5kT2vKBN28VMOEErfM="
   "resolved" "https://registry.npmjs.org/immutable/-/immutable-3.8.2.tgz"
   "version" "3.8.2"
