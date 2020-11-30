@@ -8,6 +8,8 @@ import { graphql } from "gatsby";
 import moment from "moment";
 import { MarkdownAsHTML } from "../components/Content";
 import Button, { GetInTouchButton, PrimaryButton } from "../components/Button";
+import Timeline from "../components/Timeline";
+import { isEmpty } from "lodash";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
@@ -101,28 +103,47 @@ const TechnologyRadarSection = () => {
   );
 };
 
+const formatCareerStepTimestamp = (timestamp) =>
+  moment(timestamp).format("DD.MM.YYYY");
+
 const CareerSection = ({ careerSteps }) => {
-  //debugger;
-  const list = careerSteps.map((careerStep) => {
-    //image, text, attachment
-    const key = careerStep.timespan.from + careerStep.timespan.to;
+  const getText = (careerStep) => {
+    let attachment;
+
+    if (!isEmpty(careerStep.attachment)) {
+      attachment = (
+        <PrimaryButton newTab={true} href={careerStep.attachment.file.publicURL}>
+          {careerStep.attachment.name}
+        </PrimaryButton>
+      );
+    }
 
     return (
       <>
-        <li key={key}>
-          <div>
-            <img src={getImageSrc(careerStep.image)} alt="Career step" />
-          </div>
-          <div></div>
-        </li>
-        <li key={key + "_timeline"}></li>
+        <MarkdownAsHTML className="career-step-text" markdown={careerStep.text} />
+        {attachment}
       </>
     );
-  });
+  };
+
+  const getTimespan = (careerStep) => {
+    return (
+      formatCareerStepTimestamp(careerStep.timespan.from) +
+      ` - ` +
+      formatCareerStepTimestamp(careerStep.timespan.to)
+    );
+  };
+
+  const getImage = (careerStep) => getImageSrc(careerStep.image);
 
   return (
     <section className="career-section">
-      <ul>{list}</ul>
+      <Timeline
+        data={careerSteps}
+        getText={getText}
+        getTimestamp={getTimespan}
+        getImageSrc={getImage}
+      />
     </section>
   );
 };
@@ -190,7 +211,11 @@ const WelcomeSection = ({ content }) => {
       <LinuxTerminal onComplete={moveInWelcomeMsg} />
       <div className="welcome-wrapper">
         <div className="welcome-message white-block">
-          <img className="welcome-border" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 351 804' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='351 804 0 804 330 0 351 0'/%3E%3C/svg%3E" />
+          <img
+            className="welcome-border"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 351 804' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='351 804 0 804 330 0 351 0'/%3E%3C/svg%3E"
+            alt=""
+          />
           <div className="welcome-content">
             <MarkdownAsHTML markdown={content} />
             <GetInTouchButton />

@@ -102,9 +102,9 @@ function LinuxTerminalSVG({ rows }) {
       <defs>
         <style>
           {`.LinuxTerminalSVG__cls-1{fill:#300a24}.LinuxTerminalSVG__cls-3,.LinuxTerminalSVG__cls-7{fill:#fff}.LinuxTerminalSVG__cls-5{fill:none}.LinuxTerminalSVG__cls-5,.LinuxTerminalSVG__cls-7{stroke:#fff;stroke-miterlimit:10;stroke-width:1px}.LinuxTerminalSVG__cls-6{fill:#484848}
-            .LinuxTerminalSVG__title{font: .6em Monospace; fill: white}.LinuxTerminalSVG__host{font: .6em Monospace; fill: #4E9608;}.LinuxTerminalSVG__command{font: .6em Monospace; fill: white;}
+            .LinuxTerminalSVG__title{font: .45rem Monospace; fill: white}.LinuxTerminalSVG__host{font: .45rem Monospace; fill: #4E9608;}.LinuxTerminalSVG__command{font: .45rem Monospace; fill: white;}
             .LinuxTerminalSVG__cursor{
-                font: bolder .6em Monospace; 
+                font: bolder .45rem Monospace; 
                 fill: white;
             }
             `}

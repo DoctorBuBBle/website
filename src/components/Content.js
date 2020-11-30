@@ -5,8 +5,8 @@ import remarkHtml from "remark-html";
 
 const toHTML = markdown => remark().use(remarkHtml).processSync(markdown).toString();
 
-export const MarkdownAsHTML = ({ markdown }) => (
-  <div dangerouslySetInnerHTML={{ __html: toHTML(markdown) }} />
+export const MarkdownAsHTML = ({ className, markdown }) => (
+  <div className={className} dangerouslySetInnerHTML={{ __html: toHTML(markdown) }} />
 )
 
 export const HTMLContent = ({ content, className }) => (

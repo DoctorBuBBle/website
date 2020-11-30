@@ -1,0 +1,80 @@
+@import '../colors.scss';
+
+.timeline {
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    > li {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        column-gap: 10px;
+        margin-bottom: 30px;
+
+        .timeline-part {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 70px 1fr;
+            place-items: start center;
+
+            .timeline-part-point {
+                rotate: 45deg;
+                background-color:white;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .timeline-part-line {
+                align-self: center;
+                width: 2px;
+                background-color: white;
+                height: calc(100% - 50px);
+            }
+        }
+
+        .timeline-step {
+            $margin: 20px;
+
+            .timeline-step-image {
+                position: relative;
+                margin-right: $margin;
+                width: calc(100% - #{$margin});
+
+                .timeline-step-timestamp {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 1.5rem;
+                    padding: 5px 10px;
+                    font-family: 'Source Sans Pro', sans-serif;;
+                    font-weight: bold;
+                    background-color: $darkblue;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .timeline-step-text {
+                width: calc(100% - #{$margin});
+                margin-left: $margin;
+                translate: 0 -50px;
+            }
+            
+            .fadeTimelineStepTextIn {
+                animation: fadeInTimelineStepText 0.5s forwards;
+            }
+
+            @keyframes fadeInTimelineStepText {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                    translate: 0 -50px;
+                }
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@ careerSection:
       to: 2020-08-31T07:00:00.000Z
     image: /img/heuft-gebaeude-nebel-l.jpg
     text: >-
-      HEUFT SYSTEMTECHNIK GMBH
+      # HEUFT SYSTEMTECHNIK GMBH
 
 
       Die HEUFT SYSTEMTECHNIK GMBH ist ein globales Unternehmen der Kontroll- und Inspektionstechnick für die Getränke-, Food und Pharmaindustrie. Ihre Geräte stellen sicher, dass Gefahren, wie beispielsweise Fremdkörper, im Abfüllvorgang identifiziert werden und fehlerhafter Behältnisse sicher ausgeleitet werden, sodass nur einwandfreie Produkte in den Handel gelangen. An diesem Ziel der Verbrauchersicherheit arbeitet HEUFT mit über 1.200 Mitarbeitern an 19 Standorten weltweit.
@@ -51,7 +51,7 @@ careerSection:
       until: 2018-05-29T07:00:00.000Z
     image: /img/sprengnetter_campus.jpg
     text: >-
-      Sprengnetter Immobilienbewertung GMBH
+      # Sprengnetter Immobilienbewertung GMBH
 
 
       Die Sprengnetter Immobilienbewertung ist ein modernes, mittelständisches Unternehmen mit rund 250 Mitarbeiterinnen und Mitarbeitern. Mit einer Markterfahrung von fast 40 Jahren gehört Sprengnetter zu den bedeutendsten Kompetenzstellen des deutschen Immobilienbewertunswesens. Unser Komplettangebot rund um die Immobilientbewertung ist einzigartig in Europa und umfasst Gutachten- und Bewertungsdienstleistungen, Beratungsservice, Softwarelösungen, Fachliteratur, Marktforschung, Aus- und Weiterbildung inkl. Sachverständigen Zertifizierung nach ISO 17024. Die großen Spieler der deutschen und internationalen Kreditwirtschaft sowie viele Tausend einzelne Akteure der Immobilienwirtschaft vertauen auf unsere Lösungen. Das Unternehmen verfügt über mehrere Niederlassungen in Deutschland und ist auch in Österreich aktiv.

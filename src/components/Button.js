@@ -4,17 +4,20 @@ import { gsap } from "gsap";
 import "./button.scss";
 import { cloneDeep } from "lodash";
 
-const Button = ({ className, href, onClick, children }) => {
+const Button = ({ className, href, onClick, children, newTab }) => {
   const classes = className + " button";
 
   return (
-    <button
-      className={classes}
-      onClick={onClick}
-    >
+    <button className={classes} onClick={onClick}>
       <div className="button-background-overlay"></div>
       <div className="button-content">
-        {href ? <Link to={href}>{children}</Link> : children}
+        {href ? (
+          <Link to={href} target={newTab ? "_blank" : "_self"}>
+            {children}
+          </Link>
+        ) : (
+          children
+        )}
       </div>
     </button>
   );
