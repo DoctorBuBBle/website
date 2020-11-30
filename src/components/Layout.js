@@ -13,7 +13,7 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
   useEffect(() => {
-    window.onresize = reloadPage;
+    //window.onresize = reloadPage;
   })
 
   return (

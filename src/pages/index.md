@@ -4,7 +4,7 @@ welcomeSection: >-
   # Hello I’m Sebastian Paas
 
 
-  ## A full-stack web developer from Germany.
+  ## A full-stack web developer from Germany
 
 
   I am passionate about building beautiful web applications, with or withour animations. But I don't just play with JavaScript and CSS. Find out what else I already know on my [Technology Radar](/#skills). Everything else I can learn on the fly.

@@ -2,7 +2,7 @@
   background-image: url("/img/linux-background.svg");
   background-size: cover;
   overflow: hidden;
-  height: 600px;
+  height: 1000px;
   position: relative;
 
   > div {
@@ -10,17 +10,26 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; // .linux has a heigth of 600px
   }
 
   @media screen and (min-width: 1080px) {
     .welcome-wrapper {
       width: calc(50% - 100px);
     }
+
+    .welcome-message {
+      p {
+        width: 25em;
+      }
+    }
   }
 
   .linux {
+    top: 50%;
+    translate: 0 -50%;
     background: none;
+    height: 600px;
   }
 
   .welcome-wrapper {
@@ -36,25 +45,24 @@
     align-content: center;
 
     p {
-      width: 25em;
       max-width: 100%;
       text-align: justify;
     }
 
-    &::after {
-      content: "";
+    .welcome-border {
       position: absolute;
+      object-fit: fill;
       bottom: 0;
       left: -100px;
       height: 100%;
-      border-bottom: 600px solid white;
-      border-left: 100px solid transparent;
+      width: 100px;
     }
   }
 
   .welcome-content {
     position: relative;
     z-index: 1;
+    max-width: 100vw;
     padding: 2.5em 1.5em;
     display: flex;
     flex-direction: column;
@@ -62,7 +70,8 @@
   }
 
   .primary-button {
-    margin: 1em auto 0 auto;
+    margin: 2.2em auto 0 auto;
+    font-size: 2.2em;
   }
 }
 

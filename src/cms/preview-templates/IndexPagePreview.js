@@ -20,7 +20,7 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
 
   const careerSectionData = widgetsFor("careerSection").map((careerStep) => {
     return {
-      timestamp: {
+      timespan: {
         from: careerStep.getIn(["data", "timespan", "from"]),
         to: careerStep.getIn(["data", "timespan", "to"]),
       },

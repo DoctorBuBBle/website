@@ -190,6 +190,7 @@ const WelcomeSection = ({ content }) => {
       <LinuxTerminal onComplete={moveInWelcomeMsg} />
       <div className="welcome-wrapper">
         <div className="welcome-message white-block">
+          <img className="welcome-border" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 351 804' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpolygon class='cls-1' points='351 804 0 804 330 0 351 0'/%3E%3C/svg%3E" />
           <div className="welcome-content">
             <MarkdownAsHTML markdown={content} />
             <GetInTouchButton />
