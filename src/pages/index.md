@@ -19,7 +19,7 @@ aboutSection:
 careerSection:
   - attachment:
       name: Job reference
-      file: /img/coffee-gear.png
+      file: /img/certificado.pdf
     timespan:
       from: 2018-06-01T07:00:00.000Z
       to: 2020-08-31T07:00:00.000Z
@@ -49,6 +49,7 @@ careerSection:
     timespan:
       from: 2016-08-01T07:00:00.000Z
       until: 2018-05-29T07:00:00.000Z
+      to: 2020-11-30T10:33:24.526Z
     image: /img/sprengnetter_campus.jpg
     text: >-
       # Sprengnetter Immobilienbewertung GMBH
