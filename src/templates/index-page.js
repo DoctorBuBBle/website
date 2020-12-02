@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import "./index-page.scss";
@@ -10,13 +10,15 @@ import { MarkdownAsHTML } from "../components/Content";
 import Button, { GetInTouchButton, PrimaryButton } from "../components/Button";
 import Timeline from "../components/Timeline";
 import { isEmpty } from "lodash";
+import TechnologyRadar from "../components/Technology";
+import { OrderedMap } from "immutable";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
     <div className="index-page default-background">
       <WelcomeSection content={welcome} />
       <AboutSection {...about} />
-      <TechnologyRadarSection />
+      <TechnologyRadarSection {...skills} />
       <CareerSection careerSteps={career}></CareerSection>
     </div>
   );
@@ -91,16 +93,203 @@ export const indexPageQuery = graphql`
   }
 `;
 
-const TechnologyRadarSection = () => {
+const TechnologyRadarWaves = [
+  "I know all the ins and outs",
+  "I am confident",
+  "I am on my way to beeing confident",
+  "I know the fundametals",
+  "I want to learn",
+];
+
+const SkillsTestDataLF = [
+  {
+    name: "JavaScript",
+    level: TechnologyRadarWaves[4],
+  },
+  {
+    name: "Bla",
+    level: TechnologyRadarWaves[0],
+  },
+  {
+    name: "Node.js",
+    level: TechnologyRadarWaves[0],
+  },
+  {
+    name: "express.js",
+    level: TechnologyRadarWaves[2],
+  },
+  {
+    name: "React",
+    level: TechnologyRadarWaves[1],
+  },
+  {
+    name: "Gatsby",
+    level: TechnologyRadarWaves[1],
+  },
+  {
+    name: "Netlify CMS",
+    level: TechnologyRadarWaves[2],
+  },
+  {
+    name: "Immutable JS",
+    level: TechnologyRadarWaves[3],
+  },
+  {
+    name: "Mustache",
+    level: TechnologyRadarWaves[0],
+  },
+  {
+    name: "Java",
+    level: TechnologyRadarWaves[1],
+  }
+];
+
+const SkillsTestDataDB = [
+  {
+    name: "ApacheSolr",
+    level: TechnologyRadarWaves[0],
+  },
+  {
+    name: "Postgres",
+    level: TechnologyRadarWaves[3],
+  },
+  {
+    name: "MySQL",
+    level: TechnologyRadarWaves[4],
+  },
+  {
+    name: "Spring",
+    level: TechnologyRadarWaves[3],
+  },
+  {
+    name: "Git",
+    level: TechnologyRadarWaves[1],
+  },
+  {
+    name: "Jenkins",
+    level: TechnologyRadarWaves[4],
+  },
+];
+
+const TechnologyRadarSection = ({
+  toolsAndInfrastructure,
+  languagesAndFrameworks = SkillsTestDataLF,
+  databases = SkillsTestDataDB,
+  title = "My Technology Radar",
+}) => {
+  const sectionRef = useRef();
+  const techIndexNameMapping = [];
+  const onSignalClick = () => alert("You clicked on a signal");
+  const onSignalMouseEnter = (event) => {
+    const techNumber = event.currentTarget.getAttribute("data-label");
+    sectionRef.current
+      .querySelector(`g[data-label="${techNumber}"]`)
+      .classList.add("focus");
+    sectionRef.current
+      .querySelector(`li button[data-label="${techNumber}"]`)
+      .classList.add("focus");
+  };
+  const onSignalMouseLeave = (event) => {
+    const techNumber = event.currentTarget.getAttribute("data-label");
+    sectionRef.current
+      .querySelector(`g[data-label="${techNumber}"]`)
+      .classList.remove("focus");
+    sectionRef.current
+      .querySelector(`li button[data-label="${techNumber}"]`)
+      .classList.remove("focus");
+  };
+  const [selected, setSelected] = useState(languagesAndFrameworks);
+  const techsByLevel = selected
+    // Sort by level
+    .sort((a, b) => {
+      const indexOfA = TechnologyRadarWaves.indexOf(a.level);
+      const indexOfB = TechnologyRadarWaves.indexOf(b.level);
+      const result = indexOfA - indexOfB;
+
+      if (result === 0) {
+        return a.name.localeCompare(b.name);
+      } else {
+        return result;
+      }
+    })
+    // Replace the technology name with the index
+    .map((tech, index) => {
+      techIndexNameMapping[index] = tech.name;
+      return { label: index + 1, wave: tech.level, title: tech.name };
+    });
+
+  const techTable = techsByLevel
+    .reduce((radarWaves, tech) => {
+      const techs = radarWaves.get(tech.wave) || [];
+      return radarWaves.set(tech.wave, techs.concat(tech));
+    }, OrderedMap())
+    .reduce((list, techs, radarWaveName) => {
+      return list.concat([
+        <div key={radarWaveName} className="technology-radar-level">
+          <h2>{radarWaveName}</h2>
+          <ul className="technologies-level">
+            {techs.map((tech) => (
+              <li>
+                <button
+                  data-label={tech.label}
+                  key={tech.label}
+                  onMouseEnter={onSignalMouseEnter}
+                  onMouseLeave={onSignalMouseLeave}
+                >
+                  <span className="technology-index">{tech.label}. </span>
+                  {tech.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>,
+      ]);
+    }, []);
+
   return (
-    <section className="technology-radar-section">
-      <PrimaryButton className="marg10">
-        <span>Hello World</span>
-      </PrimaryButton>
-      <GetInTouchButton className="marg10" />
-      <Button className="marg10">Hello World</Button>
+    <section ref={sectionRef} className="white-block" id="skills">
+      <article className="technology-radar-section">
+        <h1 className="section-title">{title}</h1>
+        <div className="technology-radar-control">
+          <Button
+            className={
+              selected === toolsAndInfrastructure ? "selected" : undefined
+            }
+            onClick={() => setSelected(toolsAndInfrastructure)}
+          >
+            Tools &amp; Infrastructure
+          </Button>
+          <Button
+            className={
+              selected === languagesAndFrameworks ? "selected" : undefined
+            }
+            onClick={() => setSelected(languagesAndFrameworks)}
+          >
+            Languages &amp; Frameworks
+          </Button>
+          <Button
+            className={selected === databases ? "selected" : undefined}
+            onClick={() => setSelected(databases)}
+          >
+            Databases
+          </Button>
+        </div>
+        <div className="technology-radar-content">
+          <div className="technology-radar-list">{techTable}</div>
+          <TechnologyRadar
+            waves={TechnologyRadarWaves}
+            technologies={techsByLevel}
+            onSignalMouseEnter={onSignalMouseEnter}
+            onSignalMouseLeave={onSignalMouseLeave}
+          />
+        </div>
+      </article>
     </section>
   );
+};
+
+TechnologyRadarSection.defaultsProps = {
+  languagesAndFrameworks: SkillsTestDataLF,
 };
 
 const formatCareerStepTimestamp = (timestamp) =>
@@ -143,13 +332,16 @@ const CareerSection = ({ careerSteps }) => {
   const getImage = (careerStep) => getImageSrc(careerStep.image);
 
   return (
-    <section className="career-section">
-      <Timeline
-        data={careerSteps}
-        getText={getText}
-        getTimestamp={getTimespan}
-        getImageSrc={getImage}
-      />
+    <section className="career-section" id="career">
+      <article>
+        <h1 className="section-title">{"My Career"}</h1>
+        <Timeline
+          data={careerSteps}
+          getText={getText}
+          getTimestamp={getTimespan}
+          getImageSrc={getImage}
+        />
+      </article>
     </section>
   );
 };
@@ -180,12 +372,15 @@ const getAge = () => {
 
 const AboutSection = ({ title, image, text = "" }) => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div>
         <h1>{title}</h1>
         <div className="about-content">
           <img className="about-me-image" src={getImageSrc(image)} alt="Me" />
-          <p className="about-me-text">{text.replace("[age]", getAge())}</p>
+          <MarkdownAsHTML
+            className="about-me-text"
+            markdown={text.replaceAll("[age]", getAge())}
+          ></MarkdownAsHTML>
         </div>
       </div>
     </section>
@@ -213,7 +408,7 @@ const WelcomeSection = ({ content }) => {
   };
 
   return (
-    <section ref={welcomeMsgRef} className="welcome-section">
+    <section className="welcome-section" ref={welcomeMsgRef}>
       <LinuxTerminal onComplete={moveInWelcomeMsg} />
       <div className="welcome-wrapper">
         <div className="welcome-message white-block">

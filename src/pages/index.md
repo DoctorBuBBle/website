@@ -10,7 +10,11 @@ welcomeSection: >-
   I am passionate about building beautiful web applications, with or withour animations. But I don't just play with JavaScript and CSS. Find out what else I already know on my [Technology Radar](/#skills). Everything else I can learn on the fly.
 aboutSection:
   title: About Me
-  text: Im a [age] Years old Software developer who is always interested in
+  text: >- 
+    ## Title
+
+
+    Im a [age] Years old Software developer who is always interested in
     learning and building software applications. If I am not programming, I like
     to spend my time with nature, may this be running through the forest or
     taking care of my aquarium. I also love to spend my holidays abroad,

@@ -45,11 +45,15 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: "Welcome Section", name: "welcomeSection", widget: "markdown" }
+          - {
+              label: "Welcome Section",
+              name: "welcomeSection",
+              widget: "markdown",
+            }
           - label: "About Section"
             name: "aboutSection"
             widget: "object"
-            fields: 
+            fields:
               - label: "Title"
                 name: "title"
                 widget: "string"
@@ -59,22 +63,76 @@ collections:
                 widget: "image"
               - label: "Text"
                 name: "text"
-                widget: "text"
+                widget: "markdown"
           - label: "My Technology Radar"
             name: "skillsSection"
-            widget: "list"
-            fields: 
-              - label: "Technology"
-                name: "name"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
                 widget: "string"
-              - label: "Category"
-                name: "category"
-                widget: "select"
-                options: ["Tools and Infrastructure", "Languages & Frameworks", "Databases"]
+                default: "My Technology Radar"
+              - label: "Tools and Infrastructure"
+                name: "toolsAndInfrastructure"
+                widget: "list"
+                fields:
+                  - label: "Technology"
+                    name: "name"
+                    widget: "string"
+                  - label: "Level"
+                    name: "level"
+                    widget: "select"
+                    options:
+                      - { label: "I know all the ins and outs", value: "1" }
+                      - { label: "I am confident", value: "2" }
+                      - {
+                          label: "I am on my way to beeing confident",
+                          value: "3",
+                        }
+                      - { label: "I know the fundametals", value: "4" }
+                      - { label: "I want to learn", value: "5" }
+              - label: "Languages & Frameworks"
+                name: "languagesAndFrameworks"
+                widget: "list"
+                fields:
+                  - label: "Technology"
+                    name: "name"
+                    widget: "string"
+                  - label: "Level"
+                    name: "level"
+                    widget: "select"
+                    options:
+                      - { label: "I know all the ins and outs", value: "1" }
+                      - { label: "I am confident", value: "2" }
+                      - {
+                          label: "I am on my way to beeing confident",
+                          value: "3",
+                        }
+                      - { label: "I know the fundametals", value: "4" }
+                      - { label: "I want to learn", value: "5" }
+              - label: "Databases"
+                name: "databases"
+                widget: "list"
+                fields:
+                  - label: "Technology"
+                    name: "name"
+                    widget: "string"
+                  - label: "Level"
+                    name: "level"
+                    widget: "select"
+                    options:
+                      - { label: "I know all the ins and outs", value: "1" }
+                      - { label: "I am confident", value: "2" }
+                      - {
+                          label: "I am on my way to beeing confident",
+                          value: "3",
+                        }
+                      - { label: "I know the fundametals", value: "4" }
+                      - { label: "I want to learn", value: "5" }
           - label: "My Career"
             name: "careerSection"
             widget: "list"
-            fields: 
+            fields:
               - label: "Timespan"
                 name: "timespan"
                 widget: "object"
@@ -98,7 +156,7 @@ collections:
               - label: "Attachment"
                 name: "attachment"
                 widget: "object"
-                fields: 
+                fields:
                   - label: "Name"
                     name: "name"
                     default: "Job reference"

@@ -1,0 +1,18 @@
+
+.technology-radar  {
+  .technology-radar-wave {
+    fill: url(#technology-radar-circle-gradient);
+  }
+
+  .technology-radar-signal {
+    cursor: pointer;
+
+    circle {
+      fill: #122a3b;
+    }
+
+    text {
+      fill: white;
+    }
+  }
+}

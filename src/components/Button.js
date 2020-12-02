@@ -11,11 +11,11 @@ const Button = ({ className, href, onClick, children, newTab }) => {
       <div className="button-background-overlay"></div>
       <div className="button-content">
         {href ? (
-          <Link to={href} target={newTab ? "_blank" : "_self"}>
+          <Link className="button-label" to={href} target={newTab ? "_blank" : "_self"}>
             {children}
           </Link>
         ) : (
-          <a>{children}</a>
+          <div className="button-label">{children}</div>
         )}
       </div>
     </button>

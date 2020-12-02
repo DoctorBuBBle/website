@@ -1,3 +1,5 @@
+@import "../colors.scss";
+
 .index-page {
   section {
     padding: 30px 100px;
@@ -7,6 +9,17 @@
     section {
       padding: 30px 20px;
     }
+  }
+
+  article {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -136,8 +149,56 @@
   }
 }
 
-.technology-radar-section {
-  .marg10 {
-    margin-right: 10px;
+.index-page .technology-radar-section {
+  .technology-radar-content {
+    padding-top: 30px;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+
+    @media screen and (max-width: 775px) {
+      grid-template-columns: 1fr;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .technology-radar-control {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .button.selected {
+      border-bottom: none;
+    }
+  }
+
+  .focus {
+    color: white;
+
+    circle {
+      fill: $orange;
+    }
+  }
+
+  .technology-radar-level {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      button {
+        cursor: pointer;
+        width: 100%;
+        text-align: left;
+        padding: 5px;
+        border: none;
+        background-color: transparent;
+        font-size: 1.1rem;
+      }
+
+      button.focus {
+        background-color: $orange;
+      }
+    }
   }
 }
