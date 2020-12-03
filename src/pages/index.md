@@ -76,6 +76,8 @@ skillsSection:
       level: I am confident
     - name: Redux
       level: I want to learn
+    - name: GraphQL
+      level: I want to learn
   databases:
     - name: MySQL
       level: I am confident
