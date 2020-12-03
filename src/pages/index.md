@@ -18,6 +18,57 @@ aboutSection:
   image: /img/Paas Sebastian_pp.png
 skillsSection:
   title: My Technology Radar
+  languagesAndFrameworks:
+    - name: JavaScript
+      level: I know all the ins and outs
+    - name: NodeJS
+      level: I am confident
+    - name: ExpressJS
+      level: I am on my way to beeing confident
+    - name: React
+      level: I am confident
+    - name: Gatsby
+      level: I am on my way to beeing confident
+    - name: Netlify CMS
+      level: I am confident
+    - name: jQuery
+      level: I am confident
+    - name: Mustache
+      level: I am confident
+    - name: AngularJS
+      level: I know the fundametals
+    - name: GSAP (GreenSockAnimationPlatfrom)
+      level: I am on my way to beeing confident
+    - name: Webpack
+      level: I am confident
+    - name: PHP
+      level: I know the fundametals
+    - name: Delphi
+      level: I know the fundametals
+    - name: Go
+      level: I want to learn
+    - name: Python
+      level: I want to learn
+    - name: HTML/CSS
+      level: I am confident
+    - name: XML
+      level: I am confident
+    - name: SVG
+      level: I am confident
+    - name: SASS/SCSS
+      level: I am confident
+    - name: Java
+      level: I am confident
+    - name: Spring Boot
+      level: I know the fundametals
+    - name: Spring MVC
+      level: I know the fundametals
+    - name: Thymeleaf
+      level: I know the fundametals
+    - name: Jersey
+      level: I am confident
+    - name: Redux
+      level: I want to learn
 careerSection:
   - attachment:
       name: Job reference
