@@ -16,6 +16,8 @@ aboutSection:
     taking care of my aquarium. I also love to spend my holidays abroad,
     swimming or diving in the sea.
   image: /img/Paas Sebastian_pp.png
+skillsSection:
+  title: My Technology Radar
 careerSection:
   - attachment:
       name: Job reference
