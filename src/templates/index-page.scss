@@ -124,14 +124,6 @@
   }
 
   .about-content {
-    padding: 0 30px 30px 30px;
-    display: grid;
-    column-gap: 30px;
-    grid-template-columns: 100px 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "image text text";
-    align-items: center;
-    justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
   }

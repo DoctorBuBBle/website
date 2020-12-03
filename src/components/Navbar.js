@@ -90,7 +90,9 @@ const Navbar = () => {
       <div className="navbar-control">
         <div className="navbar-brand">
           <h1>Paas</h1>
-          <h2>Way better than a platform as a service</h2>
+          <div className="sub-title">
+            <h2>Far better than a platform as a service.</h2>
+          </div>
         </div>
         {/* Hamburger menu */}
         <button
