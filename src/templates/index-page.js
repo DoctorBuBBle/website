@@ -169,7 +169,7 @@ const TechnologyRadarSection = ({
           <h2>{radarWaveName}</h2>
           <ul className="technologies-level">
             {techs.map((tech) => (
-              <li>
+              <li key={tech.label}>
                 <button
                   data-label={tech.label}
                   key={tech.label}
