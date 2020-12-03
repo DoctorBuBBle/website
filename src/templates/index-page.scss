@@ -1,28 +1,5 @@
 @import "../colors.scss";
 
-.index-page {
-  section {
-    padding: 30px 100px;
-  }
-
-  @media screen and (max-width: 1000px) {
-    section {
-      padding: 30px 20px;
-    }
-  }
-
-  article {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .section-title {
-    padding: 30px 0;
-    width: 100%;
-    text-align: center;
-  }
-}
-
 .welcome-section {
   background-image: url("/img/linux-background.svg");
   background-size: cover;

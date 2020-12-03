@@ -112,7 +112,6 @@ const TechnologyRadarSection = ({
 }) => {
   const sectionRef = useRef();
   const techIndexNameMapping = [];
-  const onSignalClick = () => alert("You clicked on a signal");
   const onSignalMouseEnter = (event) => {
     const techNumber = event.currentTarget.getAttribute("data-label");
     sectionRef.current

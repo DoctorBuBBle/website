@@ -15,7 +15,7 @@ const Timeline = ({ data, getImageSrc, getText, getTimestamp }) => {
         <div className="timeline-step">
           <div className="timeline-step-image">
             <div className="timeline-step-timestamp">{key}</div>
-            <img src={getImageSrc(entry)} alt="Career step" />
+            <img src={getImageSrc(entry)} alt="" />
           </div>
           <div className="timeline-step-text white-block">{getText(entry)}</div>
         </div>

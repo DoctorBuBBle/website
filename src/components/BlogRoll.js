@@ -1,13 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql, Link, StaticQuery } from "gatsby";
+import Timeline from "./Timeline";
+
+const getImageSrc = (image) =>
+  !!image?.childImageSharp ? image.childImageSharp.fluid.src : image;
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
 
+    const setup = {
+      data: posts,
+      getTimestamp: ({ node: post }) => post.frontmatter.date,
+      getText: ({ node: post }) => {
+        return (
+          <>
+            <Link to={post.fields.slug}>
+              <h1 style={{ whiteSpace: "normal" }}>{post.frontmatter.title}</h1>
+            </Link>
+            <p>{post.excerpt}</p>
+            <br />
+            <br />
+            <Link to={post.fields.slug}>Keep Reading →</Link>
+          </>
+        );
+      },
+      getImageSrc: ({ node: post }) =>
+        getImageSrc(post.frontmatter.featuredimage),
+    };
+
+    return <Timeline {...setup} />;
+    /*
     return (
       <div className="columns is-multiline">
         {posts &&
@@ -15,7 +40,7 @@ class BlogRoll extends React.Component {
             <div className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
+                  post.frontmatter.featuredpost ? "is-featured" : ""
                 }`}
               >
                 <header>
@@ -54,7 +79,8 @@ class BlogRoll extends React.Component {
             </div>
           ))}
       </div>
-    )
+    );
+    */
   }
 }
 
@@ -64,7 +90,7 @@ BlogRoll.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -84,11 +110,11 @@ export default () => (
               frontmatter {
                 title
                 templateKey
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "DD.MM.YYYY")
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 1000, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -101,4 +127,4 @@ export default () => (
     `}
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
-)
+);

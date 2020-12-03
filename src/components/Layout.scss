@@ -1,121 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap');
-@import '../colors.scss';
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap");
+@import "../colors.scss";
 
 .default-background {
-    background: rgb(18,42,59);
-    background: linear-gradient(90deg, rgba(18,42,59,1) 0%, rgba(41,91,126,1) 85%);
+  background: rgb(18, 42, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 42, 59, 1) 0%,
+    rgba(41, 91, 126, 1) 85%
+  );
 }
 
-body, html {
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", "Source Sans Pro", sans-serif;
+  background: rgb(18, 42, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 42, 59, 1) 0%,
+    rgba(41, 91, 126, 1) 85%
+  );
+  color: $lightGrey;
+  font-size: 1.1rem;
+
+  p {
+    text-align: justify;
     margin: 0;
-    padding: 0;
-    font-family: 'Nunito', 'Source Sans Pro', sans-serif;
-    background: rgb(18,42,59);
-    background: linear-gradient(90deg, rgba(18,42,59,1) 0%, rgba(41,91,126,1) 85%);
-    color: $lightGrey;
-    font-size: 1.1rem;
+    margin: 10px 0;
+  }
 
-    p {
-        text-align: justify;
-        margin: 0;
-        margin: 10px 0;
-    }
-
-
-
-    div {
-        box-sizing: border-box;
-    }
+  div {
+    box-sizing: border-box;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
-    hyphens: auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Sans Pro", sans-serif;
+  hyphens: auto;
 }
 
 @mixin h1 {
-    font-size: 2rem;
-    color: white;
-    font-weight: bold;
-    line-height: 0.9em;
-    margin: 0 0 5px 0;
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+  line-height: 0.9em;
+  margin: 0 0 5px 0;
 }
 
 h1 {
-    @include h1();
+  @include h1();
 }
 
-@mixin h2{
-    font-weight: normal;
-    font-size: 1.2rem;
-    line-height: 1em;
-    color: white;
-    margin: 0;
+@mixin h2 {
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: white;
+  margin: 0;
 }
 
 h2 {
-    @include h2();
+  @include h2();
 }
 
 @media screen and (max-width: 500px) {
-    h1 {
-        font-size: 8vw;
-    }
+  h1 {
+    font-size: 8vw;
+  }
 
-    h2 {
-        font-size: 5vw;
-    }
+  h2 {
+    font-size: 5vw;
+  }
 }
 
 a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
 
-    &::after{
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: block;
-        content: '';
-        width: 0;
-        border-bottom: 1px solid white;
-        transition: width .25s;
-    }
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    content: "";
+    width: 0;
+    border-bottom: 1px solid white;
+    transition: width 0.25s;
+  }
 
-    &:hover::after{
-        width: 100%;
-    }
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 .white-block {
-    background-color: white;
-    color: $grey;
-    padding: 30px 25px;
+  background-color: white;
+  color: $grey;
+  padding: 30px 25px;
 
-    h1 {
-        color: $darkblue;
-    }
-    
-    h2 {
-        @include h2();
-        color: $darkblue;
-    }
+  h1 {
+    color: $darkblue;
+  }
 
-    a {
-        color: $darkblue;
-        
-        &::after {
-            border-color: $darkblue;
-        }
+  h2 {
+    @include h2();
+    color: $darkblue;
+  }
+
+  a {
+    color: $darkblue;
+
+    &::after {
+      border-color: $darkblue;
     }
+  }
 }
-
 
 // The navigation is 60px heigh but has a top value of -1
 .layout-content {
-    min-height: 100vh;
-    padding-top: 59px;
+  min-height: 100vh;
+  padding-top: 59px;
+
+  section {
+    padding: 30px 100px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    section {
+      padding: 30px 20px;
+    }
+  }
+
+  article {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+  }
 }
