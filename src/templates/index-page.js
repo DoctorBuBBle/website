@@ -34,7 +34,7 @@ const IndexPage = (data) => {
       <IndexPageTemplate
         welcome={pageData?.welcomeSection}
         about={pageData?.aboutSection}
-        skills={pageData?.skills}
+        skills={pageData?.skillsSection}
         career={pageData?.careerSection}
       />
     </Layout>
@@ -42,55 +42,65 @@ const IndexPage = (data) => {
 };
 
 IndexPage.propTypes = {
-  data: PropTypes.shape({
-    welcome: PropTypes.string,
-    about: PropTypes.object,
-    skills: PropTypes.array,
-    career: PropTypes.array,
-  }),
+  data: PropTypes.object
 };
 
 export default IndexPage;
 
 export const indexPageQuery = graphql`
-  query IndexPageQuery {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        welcomeSection
-        careerSection {
-          attachment {
-            name
-            file {
-              base
-            }
-          }
-          image {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
-          text
-          timespan {
-            from
-            to
+query IndexPageQuery {
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      welcomeSection
+      careerSection {
+        attachment {
+          name
+          file {
+            base
           }
         }
-        aboutSection {
-          image {
-            childImageSharp {
-              fluid(quality: 100) {
-                src
-              }
+        image {
+          childImageSharp {
+            fluid {
+              src
             }
           }
-          text
-          title
+        }
+        text
+        timespan {
+          from
+          to
+        }
+      }
+      aboutSection {
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              src
+            }
+          }
+        }
+        text
+        title
+      }
+      skillsSection {
+        databases {
+          level
+          name
+        }
+        languagesAndFrameworks {
+          level
+          name
+        }
+        title
+        toolsAndInfrastructure {
+          level
+          name
         }
       }
     }
   }
+}
 `;
 
 const TechnologyRadarWaves = [

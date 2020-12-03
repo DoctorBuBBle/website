@@ -7,19 +7,97 @@ welcomeSection: >-
   ## A full-stack web developer from Germany
 
 
-  I am passionate about building beautiful web applications, with or withour animations. But I don't just play with JavaScript and CSS. Find out what else I already know on my [Technology Radar](/#skills). Everything else I can learn on the fly.
+  I am passionate about building beautiful web applications, with or withour animations. But I don't just play with JavaScript and CSS. Find out what else I know on my [Technology Radar](/#skills). Everything else I can learn on the fly.
 aboutSection:
   title: About Me
-  text: >- 
-    ## Title
+  text: >-
+    Im a [age] Years old Software developer who is always interested in learning
+    and building software applications. 
 
 
-    Im a [age] Years old Software developer who is always interested in
-    learning and building software applications. If I am not programming, I like
-    to spend my time with nature, may this be running through the forest or
-    taking care of my aquarium. I also love to spend my holidays abroad,
-    swimming or diving in the sea.
+    Or that is what you expected to hear from me, right? Yes, I am [age] and learning something new always sounds exciting. But let's face it, reading through seemingly endless, pages of documentation is everything but exciting. It's like getting up from the couch to go for a run. It takes discipline. But it's necessary to get to the amazing part of running through the forest or building an amazing and beautiful piece of software. Where we get to the even better part of improving and growing with every challenge that presents itself. 
+
+
+    And "always building software applications"? No, I am not interested in burning out. Besides I am way to fascinated by nature to sit all day before a computer. Instead I also sit in front of my aquarium. There I make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my tank. Longer stays abroad are perfect for going to local language schools and learning about a different culture. I did my first language vacation in Malta, where I discovered that my english is already quit good. So spanish became my next goal. Where I took a six week vacation with spanish lessons in Malaga. Sadly, I had to pause my vacation streak with corona running around :( . 
+
+
+    If you think I am an interesting character you would like to work with you can always [contact me](/contact).
   image: /img/Paas Sebastian_pp.png
+skillsSection:
+  title: My Technology Radar
+  languagesAndFrameworks:
+    - name: JavaScript
+      level: I know all the ins and outs
+    - name: NodeJS
+      level: I am confident
+    - name: ExpressJS
+      level: I am on my way to beeing confident
+    - name: React
+      level: I am confident
+    - name: Gatsby
+      level: I am on my way to beeing confident
+    - name: Netlify CMS
+      level: I am confident
+    - name: jQuery
+      level: I am confident
+    - name: Mustache
+      level: I am confident
+    - name: AngularJS
+      level: I know the fundametals
+    - name: GSAP (GreenSockAnimationPlatfrom)
+      level: I am on my way to beeing confident
+    - name: Webpack
+      level: I am confident
+    - name: PHP
+      level: I know the fundametals
+    - name: Delphi
+      level: I know the fundametals
+    - name: Go
+      level: I want to learn
+    - name: Python
+      level: I want to learn
+    - name: HTML/CSS
+      level: I am confident
+    - name: XML
+      level: I am confident
+    - name: SVG
+      level: I am confident
+    - name: SASS/SCSS
+      level: I am confident
+    - name: Java
+      level: I am confident
+    - name: Spring Boot
+      level: I know the fundametals
+    - name: Spring MVC
+      level: I know the fundametals
+    - name: Thymeleaf
+      level: I know the fundametals
+    - name: Jersey
+      level: I am confident
+    - name: Redux
+      level: I want to learn
+  databases:
+    - name: MySQL
+      level: I am confident
+    - name: MongoDB
+      level: I want to learn
+    - name: Apache Solr
+      level: I am confident
+    - name: PostgreSQL
+      level: I am confident
+  toolsAndInfrastructure:
+    - name: Git
+      level: I am confident
+    - name: Jenkins
+      level: I know the fundametals
+    - name: Netlify
+      level: I am confident
+    - name: Docker
+      level: I know the fundametals
+    - name: Tomcat
+      level: I know the fundametals
+    - name: NodeJS
+      level: I am confident
 careerSection:
   - attachment:
       name: Job reference

@@ -25,7 +25,7 @@ class RadarSignal extends React.PureComponent {
         <circle cx={x} cy={y} r={this.context.signalsWidth / 2}>
           {titleComp}
         </circle>
-        <text x={x} y={y} dominantBaseline="middle" textAnchor="middle">
+        <text x={x} y={y + 1} dominantBaseline="middle" textAnchor="middle">
           {label}
           {titleComp}
         </text>
@@ -84,20 +84,26 @@ const LinesOfRadarSignals = () => {
   const numberOfSignalsLines = Math.floor(
     availableWidthForSignals / signalsWidth
   );
-  const signalsPerLine = Math.round(signals.length / numberOfSignalsLines);
+  const signalsPerLine = Math.ceil(signals.length / numberOfSignalsLines);
+
+  let indexOfLastSignal = signals.length;
 
   return Array.from({ length: numberOfSignalsLines }).map((place, index) => {
-    const indexOfFirstSignal = index * signalsPerLine;
-    const indexOfLastSignal = signalsPerLine + indexOfFirstSignal + 1;
-    return (
+    let indexOfFirstSignal = indexOfLastSignal - signalsPerLine -1 ;
+    if (indexOfFirstSignal < 0) indexOfFirstSignal = 0;
+
+    const comp = (
       <LineOfRadarSignals
-        key={indexOfFirstSignal + "," + indexOfLastSignal}
+        key={indexOfFirstSignal + ',' + indexOfLastSignal}
         lineRadius={
-          r - numberOfSignalsLines * availableWidthForSignals + signalsWidth / 2
+          r - (availableWidthForSignals / numberOfSignalsLines * (index + 1))
         }
         signals={signals.slice(indexOfFirstSignal, indexOfLastSignal)}
       />
     );
+
+    indexOfLastSignal = indexOfFirstSignal;
+    return comp;
   });
 };
 
@@ -130,7 +136,7 @@ RadarWave.propTypes = {
 
 RadarWave.defaultProps = {
   radians: Math.PI,
-  signalsWidth: 40,
+  signalsWidth: 30,
 };
 
 export default function TechnologyRadar({
