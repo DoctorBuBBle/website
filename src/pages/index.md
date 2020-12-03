@@ -21,7 +21,7 @@ aboutSection:
     And "always building software applications"? No, I am not interested in burning out. Besides I am way to fascinated by nature to sit all day before a computer. Instead I also sit in front of my aquarium. There I make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my tank. Longer stays abroad are perfect for going to language schools and to learn about a different culture. I did my first language vacation in Malta, where I discovered that my english is already quit good. So spanish became my next goal and I took a six week vacation with spanish lessons in Malaga. However, after this vacation I sadly had to pause my vacation streak with corona running around :( . 
 
 
-    If you think I am an interesting character you would like to work with you can always [contact me](/contact).
+    If you think I am an interesting character, you would like to work with, you can always [contact me](/contact).
   image: /img/Paas Sebastian_pp.png
 skillsSection:
   title: My Technology Radar
