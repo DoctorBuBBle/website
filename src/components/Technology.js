@@ -156,7 +156,7 @@ export default function TechnologyRadar({
             <stop offset="1" stopColor="#29AAE1" />
           </radialGradient>
         </defs>
-        {waves.reverse().map((wave, index) => (
+        {waves.slice().reverse().map((wave, index) => (
           <RadarWave
             key={wave}
             x={halfWidth}

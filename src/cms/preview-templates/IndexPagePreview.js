@@ -9,15 +9,21 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
     text: entry.getIn(["data", "aboutSection", "text"]),
   };
 
-  const skillsSectionData = widgetsFor("skillsSection").map((skill) =>
-    skill
-      ? {
-          name: skill.getIn(["data", "name"]),
-          category: skill.getIn(["data", "category"]),
-        }
-      : undefined
-  );
+  const getSkills = (category) => {
+    try {
+      return entry.getIn(["data", "skillsSection", category]).toJS();
+    } catch (e) {
+      return [];
+    }
+  }
 
+  const skillsSectionData = {
+    title: entry.getIn(["data", "skillsSection", "title"]),
+    toolsAndInfrastructure: getSkills("toolsAndInfrastructure"),
+    languagesAndFrameworks: getSkills("languagesAndFrameworks"),
+    databases: getSkills("databases"),
+  }
+  
   const careerSectionData = widgetsFor("careerSection").map((careerStep) => {
     return {
       timespan: {
@@ -26,10 +32,12 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
       },
       image: getAsset(careerStep.getIn(["data", "image"])),
       text: careerStep.getIn(["data", "text"]),
+      /*
       attachment: {
         name: getAsset(careerStep.getIn(["data", "attachment", "name"])),
         file: getAsset(careerStep.getIn(["data", "attachment", "file"])),
       },
+      */
     };
   });
 

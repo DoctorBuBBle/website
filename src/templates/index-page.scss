@@ -171,6 +171,12 @@
     .button.selected {
       border-bottom: none;
     }
+
+    .button .button-label {
+      padding: 0.7em 0;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .focus {

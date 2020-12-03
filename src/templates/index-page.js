@@ -99,82 +99,12 @@ const TechnologyRadarWaves = [
   "I am on my way to beeing confident",
   "I know the fundametals",
   "I want to learn",
-];
-
-const SkillsTestDataLF = [
-  {
-    name: "JavaScript",
-    level: TechnologyRadarWaves[4],
-  },
-  {
-    name: "Bla",
-    level: TechnologyRadarWaves[0],
-  },
-  {
-    name: "Node.js",
-    level: TechnologyRadarWaves[0],
-  },
-  {
-    name: "express.js",
-    level: TechnologyRadarWaves[2],
-  },
-  {
-    name: "React",
-    level: TechnologyRadarWaves[1],
-  },
-  {
-    name: "Gatsby",
-    level: TechnologyRadarWaves[1],
-  },
-  {
-    name: "Netlify CMS",
-    level: TechnologyRadarWaves[2],
-  },
-  {
-    name: "Immutable JS",
-    level: TechnologyRadarWaves[3],
-  },
-  {
-    name: "Mustache",
-    level: TechnologyRadarWaves[0],
-  },
-  {
-    name: "Java",
-    level: TechnologyRadarWaves[1],
-  }
-];
-
-const SkillsTestDataDB = [
-  {
-    name: "ApacheSolr",
-    level: TechnologyRadarWaves[0],
-  },
-  {
-    name: "Postgres",
-    level: TechnologyRadarWaves[3],
-  },
-  {
-    name: "MySQL",
-    level: TechnologyRadarWaves[4],
-  },
-  {
-    name: "Spring",
-    level: TechnologyRadarWaves[3],
-  },
-  {
-    name: "Git",
-    level: TechnologyRadarWaves[1],
-  },
-  {
-    name: "Jenkins",
-    level: TechnologyRadarWaves[4],
-  },
-];
+]
 
 const TechnologyRadarSection = ({
-  toolsAndInfrastructure,
-  languagesAndFrameworks = SkillsTestDataLF,
-  databases = SkillsTestDataDB,
+  toolsAndInfrastructure = [],
+  languagesAndFrameworks = [],
+  databases = [],
   title = "My Technology Radar",
 }) => {
   const sectionRef = useRef();
@@ -198,8 +128,16 @@ const TechnologyRadarSection = ({
       .querySelector(`li button[data-label="${techNumber}"]`)
       .classList.remove("focus");
   };
-  const [selected, setSelected] = useState(languagesAndFrameworks);
-  const techsByLevel = selected
+  const [selected, setSelected] = useState({
+    nc: "LF",
+    data: languagesAndFrameworks,
+  });
+  const selectLF = () => setSelected({ nc: "LF", data: languagesAndFrameworks });
+  const selectDB = () => setSelected({ nc: "DB", data: databases });
+  const selectTI = () => setSelected({ nc: "TI", data: toolsAndInfrastructure });
+  const getSelectedClass = (nc) =>
+    selected.nc === nc ? "selected" : undefined;
+  const techsByLevel = selected.data
     // Sort by level
     .sort((a, b) => {
       const indexOfA = TechnologyRadarWaves.indexOf(a.level);
@@ -251,26 +189,13 @@ const TechnologyRadarSection = ({
       <article className="technology-radar-section">
         <h1 className="section-title">{title}</h1>
         <div className="technology-radar-control">
-          <Button
-            className={
-              selected === toolsAndInfrastructure ? "selected" : undefined
-            }
-            onClick={() => setSelected(toolsAndInfrastructure)}
-          >
+          <Button className={getSelectedClass("TI")} onClick={selectTI}>
             Tools &amp; Infrastructure
           </Button>
-          <Button
-            className={
-              selected === languagesAndFrameworks ? "selected" : undefined
-            }
-            onClick={() => setSelected(languagesAndFrameworks)}
-          >
+          <Button className={getSelectedClass("LF")} onClick={selectLF}>
             Languages &amp; Frameworks
           </Button>
-          <Button
-            className={selected === databases ? "selected" : undefined}
-            onClick={() => setSelected(databases)}
-          >
+          <Button className={getSelectedClass("DB")} onClick={selectDB}>
             Databases
           </Button>
         </div>
@@ -286,10 +211,6 @@ const TechnologyRadarSection = ({
       </article>
     </section>
   );
-};
-
-TechnologyRadarSection.defaultsProps = {
-  languagesAndFrameworks: SkillsTestDataLF,
 };
 
 const formatCareerStepTimestamp = (timestamp) =>

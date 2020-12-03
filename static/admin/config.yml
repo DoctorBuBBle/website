@@ -83,14 +83,13 @@ collections:
                     name: "level"
                     widget: "select"
                     options:
-                      - { label: "I know all the ins and outs", value: "1" }
-                      - { label: "I am confident", value: "2" }
-                      - {
-                          label: "I am on my way to beeing confident",
-                          value: "3",
-                        }
-                      - { label: "I know the fundametals", value: "4" }
-                      - { label: "I want to learn", value: "5" }
+                      [
+                        "I know all the ins and outs",
+                        "I am confident",
+                        "I am on my way to beeing confident",
+                        "I know the fundametals",
+                        "I want to learn",
+                      ]
               - label: "Languages & Frameworks"
                 name: "languagesAndFrameworks"
                 widget: "list"
@@ -102,14 +101,13 @@ collections:
                     name: "level"
                     widget: "select"
                     options:
-                      - { label: "I know all the ins and outs", value: "1" }
-                      - { label: "I am confident", value: "2" }
-                      - {
-                          label: "I am on my way to beeing confident",
-                          value: "3",
-                        }
-                      - { label: "I know the fundametals", value: "4" }
-                      - { label: "I want to learn", value: "5" }
+                      [
+                        "I know all the ins and outs",
+                        "I am confident",
+                        "I am on my way to beeing confident",
+                        "I know the fundametals",
+                        "I want to learn",
+                      ]
               - label: "Databases"
                 name: "databases"
                 widget: "list"
@@ -121,14 +119,13 @@ collections:
                     name: "level"
                     widget: "select"
                     options:
-                      - { label: "I know all the ins and outs", value: "1" }
-                      - { label: "I am confident", value: "2" }
-                      - {
-                          label: "I am on my way to beeing confident",
-                          value: "3",
-                        }
-                      - { label: "I know the fundametals", value: "4" }
-                      - { label: "I want to learn", value: "5" }
+                      [
+                        "I know all the ins and outs",
+                        "I am confident",
+                        "I am on my way to beeing confident",
+                        "I know the fundametals",
+                        "I want to learn",
+                      ]
           - label: "My Career"
             name: "careerSection"
             widget: "list"
