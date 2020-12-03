@@ -116,5 +116,6 @@ a {
 
 // The navigation is 60px heigh but has a top value of -1
 .layout-content {
+    min-height: 100vh;
     padding-top: 59px;
 }
