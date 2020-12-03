@@ -69,6 +69,28 @@ skillsSection:
       level: I am confident
     - name: Redux
       level: I want to learn
+  databases:
+    - name: MySQL
+      level: I am confident
+    - name: MongoDB
+      level: I want to learn
+    - name: Apache Solr
+      level: I am confident
+    - name: PostgreSQL
+      level: I am confident
+  toolsAndInfrastructure:
+    - name: Git
+      level: I am confident
+    - name: Jenkins
+      level: I know the fundametals
+    - name: Netlify
+      level: I am confident
+    - name: Docker
+      level: I know the fundametals
+    - name: Tomcat
+      level: I know the fundametals
+    - name: NodeJS
+      level: I am confident
 careerSection:
   - attachment:
       name: Job reference
