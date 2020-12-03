@@ -73,13 +73,6 @@ query IndexPageQuery {
         }
       }
       aboutSection {
-        image {
-          childImageSharp {
-            fluid(quality: 100) {
-              src
-            }
-          }
-        }
         text
         title
       }
@@ -307,7 +300,7 @@ const AboutSection = ({ title, image, text = "" }) => {
       <div>
         <h1>{title}</h1>
         <div className="about-content">
-          <img className="about-me-image" src={getImageSrc(image)} alt="Me" />
+          {/*<img className="about-me-image" src={getImageSrc(image)} alt="Me" />*/}
           <MarkdownAsHTML
             className="about-me-text"
             markdown={text.replaceAll("[age]", getAge())}
