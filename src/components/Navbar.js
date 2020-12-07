@@ -18,7 +18,7 @@ const navigationItems = menuLinks.map((link) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className="icon">{link.get("label")}</span>
+        {link.get("label")}
       </a>
     );
   }
@@ -92,6 +92,9 @@ const Navbar = () => {
           <h1>Paas</h1>
           <div className="sub-title">
             <h2>Far better than a platform as a service.</h2>
+          </div>
+          <div className="navbar-blog-link">
+            <Link to="/blog">Blog</Link>
           </div>
         </div>
         {/* Hamburger menu */}

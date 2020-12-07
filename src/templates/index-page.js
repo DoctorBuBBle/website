@@ -297,7 +297,7 @@ const AboutSection = ({ title, image, text = "" }) => {
   return (
     <section className="about-section" id="about">
       <div>
-        <h1>{title}</h1>
+        <h1 className="section-title">{title}</h1>
         <div className="about-content">
           {/*<img className="about-me-image" src={getImageSrc(image)} alt="Me" />*/}
           <MarkdownAsHTML

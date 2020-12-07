@@ -27,6 +27,19 @@
     }
 
     .navbar-brand {
+      display: grid;
+      grid-template-columns: 110px 1fr 60px;
+      align-items: center;
+      height: 60px;
+
+      @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr 1fr;
+
+        .sub-title {
+          display: none;
+        }
+      }
+
       h1 {
         padding: 0;
         font-size: 3rem;
@@ -34,16 +47,20 @@
       }
 
       .sub-title {
-        @media screen and (max-width: 600px) {
-          display: none;
-        }
-
         float: left;
         margin-left: 10px;
 
         h2 {
-          margin-top: 24px;
+          margin-top: 16px;
         }
+      }
+
+      .navbar-blog-link {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "Source Sans Pro";
+        margin-right: 15px;;
+        justify-self: end;
       }
     }
 
@@ -107,20 +124,20 @@
 
     .navbar-item:not(.button) {
       color: $darkblue;
-      font-size: 1.5rem;
       line-height: 2.2rem;
       translate: -15% 0;
       opacity: 0;
+      margin-top: 5px;
     }
 
     .primary-button,
-    .github-link {
+    .navbar-item.github-link {
       translate: 0 -15%;
-      margin-top: 1.5em;
+      margin-top: 30px;
       opacity: 0;
 
       img {
-        height: 2em;
+        height: 70px;
       }
       &::after {
         content: none;
