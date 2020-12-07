@@ -300,10 +300,9 @@ const AboutSection = ({ title, image, text = "" }) => {
         <h1>{title}</h1>
         <div className="about-content">
           {/*<img className="about-me-image" src={getImageSrc(image)} alt="Me" />*/}
-          {console.warn(text, typeof text)}
           <MarkdownAsHTML
             className="about-me-text"
-            markdown={text.toString().replaceAll("[age]", getAge())}
+            markdown={text.replaceAll("[age]", getAge())}
           ></MarkdownAsHTML>
         </div>
       </div>
