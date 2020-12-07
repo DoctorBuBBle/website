@@ -1,0 +1,63 @@
+@import "../colors.scss";
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  .contact-form {
+    $size: 40px;
+
+    .form-message {
+      width: 100%;
+
+      textarea {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+      }
+    }
+
+    .form-group {
+      display: grid;
+      grid-template-columns: $size 1fr;
+      justify-items: stretch;
+      column-gap: 10px;
+      margin-bottom: 20px;
+      background-color: white;
+      color: $grey;
+      padding: 15px;
+    }
+
+    label {
+      display: block;
+      width: $size;
+      height: $size;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    input,
+    textarea {
+      border: none;
+      border-radius: 0;
+      font-size: 1.2rem;
+      font-family: "Nunito", "Source Sans Pro", sans-serif;
+      padding: 0 5px;
+      max-width: 100%;
+    }
+
+    .is-mandatory {
+      border: 1px solid red;
+    }
+
+    .form-submit {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
+}
