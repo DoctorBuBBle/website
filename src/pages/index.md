@@ -76,8 +76,6 @@ skillsSection:
       level: I am confident
     - name: Redux
       level: I want to learn
-    - name: GraphQL
-      level: I want to learn
     - name: ReasonML
       level: I want to learn
     - name: Elixir
@@ -147,6 +145,10 @@ skillsSection:
       level: I am on my way to beeing confident
     - name: Adobe Photoshop
       level: I want to learn
+    - name: Webdesign fundametals
+      level: I want to learn
+    - name: GraphQL
+      level: I am on my way to beeing confident
 careerSection:
   - attachment:
       name: Job reference
