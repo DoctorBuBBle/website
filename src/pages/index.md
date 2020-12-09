@@ -78,6 +78,12 @@ skillsSection:
       level: I want to learn
     - name: GraphQL
       level: I want to learn
+    - name: ReasonML
+      level: I want to learn
+    - name: Elixir
+      level: I want to learn
+    - name: Phoenix (Elixir framework)
+      level: I want to learn
   databases:
     - name: MySQL
       level: I am confident
