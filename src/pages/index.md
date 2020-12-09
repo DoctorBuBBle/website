@@ -136,6 +136,17 @@ skillsSection:
       level: I know the fundametals
     - name: NodeJS
       level: I am confident
+  other:
+    - name: Flux
+      level: I want to learn
+    - name: REST
+      level: I am confident
+    - name: MVC
+      level: I am confident
+    - name: Adobe Illustrator
+      level: I am on my way to beeing confident
+    - name: Adobe Photoshop
+      level: I want to learn
 careerSection:
   - attachment:
       name: Job reference
