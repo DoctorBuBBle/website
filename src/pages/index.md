@@ -112,6 +112,8 @@ skillsSection:
       level: I want to learn
     - name: Nuxt.js (Vue framework)
       level: I want to learn
+    - name: Emmet Abbreviations
+      level: I want to learn
   databases:
     - name: MySQL
       level: I am confident
