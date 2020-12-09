@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import "./index-page.scss";
@@ -12,6 +12,7 @@ import Timeline from "../components/Timeline";
 import { isEmpty } from "lodash";
 import TechnologyRadar from "../components/Technology";
 import { OrderedMap } from "immutable";
+import { debounce } from 'lodash'
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
@@ -26,8 +27,14 @@ export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
 
 IndexPageTemplate.propTypes = {};
 
+const reloadPage = debounce(() => window.location.reload(), 150);
+
 const IndexPage = (data) => {
   const pageData = data?.data?.markdownRemark?.frontmatter;
+
+  useEffect(() => {
+    window.onresize = reloadPage;
+  })
 
   return (
     <Layout>

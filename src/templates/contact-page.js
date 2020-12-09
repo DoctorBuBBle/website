@@ -46,7 +46,7 @@ export const ContactPageTemplate = ({ title }) => {
         },
       }).then((response) => {
         if (response.status === 200) {
-          alert("Your email was sent successfully.");
+          setFormData(true);
         } else {
           alert("Your email could not be sent.");
         }
@@ -64,49 +64,63 @@ export const ContactPageTemplate = ({ title }) => {
   return (
     <section className="contact-section">
       <article>
-        <h1 className="section-title">{title}</h1>
-        <form method="POST" className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">
-              <img src={userIcon} alt="email" />
-            </label>
-            <input
-              ref={refs.email}
-              type="email"
-              placeholder="Email"
-              className="form-control"
-              aria-describedby="emailHelp"
-              value={formData.email}
-              onChange={onInputChange.bind(this, "email")}
-            />
+        {typeof formData === "object" ? (
+          <>
+            <h1 className="section-title">{title}</h1>
+            <form
+              method="POST"
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
+              <div className="form-group">
+                <label htmlFor="email">
+                  <img src={userIcon} alt="email" />
+                </label>
+                <input
+                  ref={refs.email}
+                  type="email"
+                  placeholder="Email"
+                  className="form-control"
+                  aria-describedby="emailHelp"
+                  value={formData.email}
+                  onChange={onInputChange.bind(this, "email")}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="subject">
+                  <img src={questionMark} alt="subject" />
+                </label>
+                <input
+                  ref={refs.subject}
+                  type="text"
+                  placeholder="Subject"
+                  className="form-control"
+                  value={formData.subject}
+                  onChange={onInputChange.bind(this, "subject")}
+                />
+              </div>
+              <div className="form-message">
+                <textarea
+                  ref={refs.message}
+                  placeholder="Message"
+                  className="form-control"
+                  rows="5"
+                  value={formData.message}
+                  onChange={onInputChange.bind(this, "message")}
+                />
+              </div>
+              <div className="form-submit">
+                <PrimaryButton>Submit</PrimaryButton>
+              </div>
+            </form>
+          </>
+        ) : (
+          <div className="contact-form-sent">
+          <h1>
+            Thank you for your email. <br/> I will answer you as soon as possible.
+          </h1>
           </div>
-          <div className="form-group">
-            <label htmlFor="subject">
-              <img src={questionMark} alt="subject" />
-            </label>
-            <input
-              ref={refs.subject}
-              type="text"
-              placeholder="Subject"
-              className="form-control"
-              value={formData.subject}
-              onChange={onInputChange.bind(this, "subject")}
-            />
-          </div>
-          <div className="form-message">
-            <textarea
-              ref={refs.message}
-              placeholder="Message"
-              className="form-control"
-              rows="5"
-              value={formData.message}
-              onChange={onInputChange.bind(this, "message")}
-            />
-          </div>
-          <div className="form-submit">
-            <PrimaryButton>Submit</PrimaryButton>
-          </div>
-        </form>
+        )}
       </article>
     </section>
   );

@@ -5,6 +5,14 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
 
+.contact-form-sent {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  text-align: center;
+}
+
   .contact-form {
     $size: 40px;
 
