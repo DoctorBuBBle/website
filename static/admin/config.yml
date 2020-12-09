@@ -126,6 +126,24 @@ collections:
                         "I know the fundametals",
                         "I want to learn",
                       ]
+              - label: "Other"
+                name: "other"
+                widget: "list"
+                fields:
+                  - label: "Technology"
+                    name: "name"
+                    widget: "string"
+                  - label: "Level"
+                    name: "level"
+                    widget: "select"
+                    options:
+                      [
+                        "I know all the ins and outs",
+                        "I am confident",
+                        "I am on my way to beeing confident",
+                        "I know the fundametals",
+                        "I want to learn",
+                      ]
           - label: "My Career"
             name: "careerSection"
             widget: "list"

@@ -42,58 +42,58 @@ const IndexPage = (data) => {
 };
 
 IndexPage.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 };
 
 export default IndexPage;
 
 export const indexPageQuery = graphql`
-query IndexPageQuery {
-  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-    frontmatter {
-      welcomeSection
-      careerSection {
-        attachment {
-          name
-          file {
-            base
-          }
-        }
-        image {
-          childImageSharp {
-            fluid {
-              src
+  query IndexPageQuery {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+      frontmatter {
+        welcomeSection
+        careerSection {
+          attachment {
+            name
+            file {
+              base
             }
           }
+          image {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+          text
+          timespan {
+            from
+            to
+          }
         }
-        text
-        timespan {
-          from
-          to
+        aboutSection {
+          text
+          title
         }
-      }
-      aboutSection {
-        text
-        title
-      }
-      skillsSection {
-        databases {
-          level
-          name
-        }
-        languagesAndFrameworks {
-          level
-          name
-        }
-        title
-        toolsAndInfrastructure {
-          level
-          name
+        skillsSection {
+          databases {
+            level
+            name
+          }
+          languagesAndFrameworks {
+            level
+            name
+          }
+          title
+          toolsAndInfrastructure {
+            level
+            name
+          }
         }
       }
     }
   }
-}
 `;
 
 const TechnologyRadarWaves = [
@@ -102,12 +102,13 @@ const TechnologyRadarWaves = [
   "I am on my way to beeing confident",
   "I know the fundametals",
   "I want to learn",
-]
+];
 
 const TechnologyRadarSection = ({
   toolsAndInfrastructure = [],
   languagesAndFrameworks = [],
   databases = [],
+  others = [],
   title = "My Technology Radar",
 }) => {
   const sectionRef = useRef();
@@ -134,9 +135,12 @@ const TechnologyRadarSection = ({
     nc: "LF",
     data: languagesAndFrameworks,
   });
-  const selectLF = () => setSelected({ nc: "LF", data: languagesAndFrameworks });
+  const selectLF = () =>
+    setSelected({ nc: "LF", data: languagesAndFrameworks });
   const selectDB = () => setSelected({ nc: "DB", data: databases });
-  const selectTI = () => setSelected({ nc: "TI", data: toolsAndInfrastructure });
+  const selectTI = () =>
+    setSelected({ nc: "TI", data: toolsAndInfrastructure });
+  const selectO = () => setSelected({ nc: "O", data: others });
   const getSelectedClass = (nc) =>
     selected.nc === nc ? "selected" : undefined;
   const techsByLevel = selected.data
@@ -198,7 +202,10 @@ const TechnologyRadarSection = ({
             Languages &amp; Frameworks
           </Button>
           <Button className={getSelectedClass("DB")} onClick={selectDB}>
-            Databases
+            Data Management
+          </Button>
+          <Button className={getSelectedClass("O")} onClick={selectO}>
+            Others
           </Button>
         </div>
         <div className="technology-radar-content">

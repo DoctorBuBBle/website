@@ -22,8 +22,9 @@ const IndexPagePreview = ({ entry, widgetsFor, widgetFor, getAsset }) => {
     toolsAndInfrastructure: getSkills("toolsAndInfrastructure"),
     languagesAndFrameworks: getSkills("languagesAndFrameworks"),
     databases: getSkills("databases"),
+    others: getSkills("other")
   }
-  
+
   const careerSectionData = widgetsFor("careerSection").map((careerStep) => {
     return {
       timespan: {

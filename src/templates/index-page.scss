@@ -79,7 +79,6 @@
 }
 
 .about-section {
-
   p {
     padding: 0;
   }
@@ -120,6 +119,7 @@
     margin-bottom: 30px;
     display: grid;
     grid-template-columns: 1fr 500px;
+    align-items: center;
 
     @media screen and (max-width: 775px) {
       grid-template-columns: 1fr;
@@ -130,7 +130,11 @@
 
   .technology-radar-control {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media screen and (max-width: 775px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     .button.selected {
       border-bottom: none;
