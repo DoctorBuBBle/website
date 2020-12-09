@@ -47,7 +47,7 @@ skillsSection:
     - name: GSAP (GreenSockAnimationPlatfrom)
       level: I am on my way to beeing confident
     - name: Webpack
-      level: I am confident
+      level: I am on my way to beeing confident
     - name: PHP
       level: I know the fundametals
     - name: Delphi
