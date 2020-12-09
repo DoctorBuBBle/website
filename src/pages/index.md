@@ -84,6 +84,34 @@ skillsSection:
       level: I want to learn
     - name: Phoenix (Elixir framework)
       level: I want to learn
+    - name: Clojure
+      level: I want to learn
+    - name: Elm
+      level: I want to learn
+    - name: F#
+      level: I want to learn
+    - name: Ember.js
+      level: I want to learn
+    - name: VueJS
+      level: I want to learn
+    - name: "Selenium "
+      level: I want to learn
+    - name: Jest
+      level: I want to learn
+    - name: Django
+      level: I want to learn
+    - name: Flask
+      level: I want to learn
+    - name: React Native
+      level: I want to learn
+    - name: Kotline
+      level: I want to learn
+    - name: C#
+      level: I want to learn
+    - name: Next.js (React framework)
+      level: I want to learn
+    - name: Nuxt.js (Vue framework)
+      level: I want to learn
   databases:
     - name: MySQL
       level: I am confident
@@ -99,7 +127,7 @@ skillsSection:
     - name: Jenkins
       level: I know the fundametals
     - name: Netlify
-      level: I am confident
+      level: I am on my way to beeing confident
     - name: Docker
       level: I know the fundametals
     - name: Tomcat
