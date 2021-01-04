@@ -157,8 +157,8 @@ skillsSection:
       level: I am on my way to beeing confident
 careerSection:
   - attachment:
-      name: Job reference
-      file: /img/certificado.pdf
+      name: Job reference (German)
+      file: /img/arbeitszeugnis-heuft.pdf
     timespan:
       from: 2018-06-01T07:00:00.000Z
       to: 2020-08-31T07:00:00.000Z
@@ -167,24 +167,27 @@ careerSection:
       # HEUFT SYSTEMTECHNIK GMBH
 
 
-      Die HEUFT SYSTEMTECHNIK GMBH ist ein globales Unternehmen der Kontroll- und Inspektionstechnick für die Getränke-, Food und Pharmaindustrie. Ihre Geräte stellen sicher, dass Gefahren, wie beispielsweise Fremdkörper, im Abfüllvorgang identifiziert werden und fehlerhafter Behältnisse sicher ausgeleitet werden, sodass nur einwandfreie Produkte in den Handel gelangen. An diesem Ziel der Verbrauchersicherheit arbeitet HEUFT mit über 1.200 Mitarbeitern an 19 Standorten weltweit.
+      [HEUFT SYSTEMTECHNIK GmbH](https://www.heuft.com) is a global company in the field of control and inspection technology for the beverage, food and pharmaceutical industries. Its devices ensure that dangers such as foreign objects are identified during the filling process and that faulty containers are safely rejected so that only flawless products reach the market. HEUFT works towards this goal of consumer safety with over 1,200 employees at 19 locations worldwide.
+
+      <br/>
+
+      <br/>
+
+      My tasks:
 
 
-      Meine Aufgaben:
+      * Independent planning, conception and realization of new functions in internal company applications.
 
+      * Further development of existing internal company applications in Java and JavaScript
 
-      * Eigenständige Planung, Konzeption und Realisierung neuer Funktionen in interne Unternehmensanwendungen
+      * Integration and extension of freely available libraries into existing applications
 
-      * Weiterentwicklung von existierenden internen Unternehmensanwendungen in Java und JavaScript 
+      * Maintenance and implementation of database structures in Postgres and Apache Solr
 
-      * Einbindung und Erweiterung von frei verfügbaren Bibliotheken in bestehende Anwendungen
-
-      * Pflege alter und Implementierung neuer Datenbank Strukturen in Postgres und Apache Solr
-
-      * Codedokumentation auf Englisch und Deutsch
+      * Code documentation in English and German
   - attachment:
-      name: Job reference
-      file: /img/apple-touch-icon.png
+      name: Job reference (German)
+      file: /img/ausbildungszeugnis-sprengnetter.pdf
     timespan:
       from: 2016-08-01T07:00:00.000Z
       until: 2018-05-29T07:00:00.000Z
@@ -194,21 +197,24 @@ careerSection:
       # Sprengnetter Immobilien&shy;bewertung GMBH
 
 
-      Die Sprengnetter Immobilienbewertung ist ein modernes, mittelständisches Unternehmen mit rund 250 Mitarbeiterinnen und Mitarbeitern. Mit einer Markterfahrung von fast 40 Jahren gehört Sprengnetter zu den bedeutendsten Kompetenzstellen des deutschen Immobilienbewertunswesens. Unser Komplettangebot rund um die Immobilientbewertung ist einzigartig in Europa und umfasst Gutachten- und Bewertungsdienstleistungen, Beratungsservice, Softwarelösungen, Fachliteratur, Marktforschung, Aus- und Weiterbildung inkl. Sachverständigen Zertifizierung nach ISO 17024. Die großen Spieler der deutschen und internationalen Kreditwirtschaft sowie viele Tausend einzelne Akteure der Immobilienwirtschaft vertauen auf unsere Lösungen. Das Unternehmen verfügt über mehrere Niederlassungen in Deutschland und ist auch in Österreich aktiv.
+      [Sprengnetter Immobilienbewertung](https://www.sprengnetter.de/) is a modern, medium-sized company with around 250 employees. With almost 40 years of market experience, Sprengnetter is one of the most important experts in German for real estate valuation. The complete range of services for real estate valuation is unique in Europe and includes appraisal and valuation services, consulting services, software solutions, technical literature, market research, education and training including expert certification according to ISO 17024. The major players in the German and international lending industry as well as many thousands of individual players in the real estate industry rely on these solutions. The company has several branches in Germany and is also active in Austria.
+
+      <br/>
+
+      <br/>
+
+      My tasks:
 
 
-      Meine Aufgaben:
+      * With the help of the trainer, planning, realization and maintenance of projects.
 
+      * Implementation of pure Java applications
 
-      * Mit Hilfe des Ausbilders Planung, Realisierung und Pflege von Projekten
+      * Implementation of Java web applications with JavaScript frontend
 
-      * Implementierung reiner Java Anwendungen
+      * Maintenance of existing databases and web service applications
 
-      * Implementierung von Java-Webanwendungen mit JavaScript Frontend
+      * Implementing automated tests and bugfixing
 
-      * Pflege von bestehenden Datenbanken und Webservice Anwendungen
-
-      * Implementieren von automatisierten Tests und Bugfixing
-
-      * Codedokumentation auf Englisch und Deutsch
+      * Code documentation in English and German
 ---
