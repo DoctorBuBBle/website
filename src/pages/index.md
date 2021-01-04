@@ -15,14 +15,10 @@ aboutSection:
     learning and building software applications.
 
 
-    However, that is probably what every one says, right? But yes, diving into a new Language, Concept or Framework to become a better developer always gets me excited. Even seemingly endless pages of documentation become very attractive if I can use this knowledge to improve my programming skills. It's like getting up from the couch to go for a run. It takes a bit of discipline, but as soon as you get going there is only smooth sailing ahead.
-
-
+    However, that is probably what every one says, right? But yes, diving into a new Language, Concept or Framework to become a better developer always gets me excited. Even seemingly endless pages of documentation become very attractive if I can utilize this knowledge to improve my programming skills. It's like getting up from the couch to go for a run. It requires a bit of discipline, but as soon as you get going there is only smooth sailing ahead.
 
 
     Even though I love programming, I am way too fascinated by nature to sit all day before a computer. Instead, I also go running through the forest or enjoy my aquarium. I always make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my aquarium. Longer stays abroad are perfect for going to language schools and to learning about a different culture. I did my first language vacation in Malta, where I discovered that my English is already quite good. So Spanish became my next goal and I took a six-week vacation with Spanish lessons in Malaga. However, after my stay in Malaga, I sadly had to pause my vacation streak duo to corona.
-
-
 
 
     If you think I am an interesting character, and you would like to work with me, you can always [contact me](/contact).
