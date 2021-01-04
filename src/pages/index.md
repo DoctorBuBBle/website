@@ -187,7 +187,7 @@ careerSection:
     timespan:
       from: 2016-08-01T07:00:00.000Z
       until: 2018-05-29T07:00:00.000Z
-      to: 2020-11-30T10:33:24.526Z
+      to: 2018-05-29T09:33:24.526Z
     image: /img/sprengnetter_campus.jpg
     text: >-
       # Sprengnetter Immobilien&shy;bewertung GMBH
@@ -213,4 +213,16 @@ careerSection:
       * Implementing automated tests and bugfixing
 
       * Code documentation in English and German
+  - attachment:
+      name: School certificate (German)
+      file: /img/fachhochschulreife_zeugnis.pdf
+    timespan:
+      from: 2014-09-08T07:00:19.072Z
+      to: 2016-06-27T09:00:19.188Z
+    image: /img/bbs-cochem.jpg
+    text: >-
+      # Berufsbildende Schule Cochem
+
+
+      An der Berufsbildenden Schule Cochem absolvierte ich meine Höhere Berufsfachschule Fachrichtung IT-Systeme. Zusammen mit meiner Ausbildung zum Fachinformatiker für Anwendungsentwicklung habe ich dadürch die Fachhochschulreife erreicht. In der Berufsbildenden Schule Cochem habe ich die Grundlagen der Programmierung in Delphi, C++ und PHP mit HTML und CSS gelernt.
 ---
