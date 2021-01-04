@@ -7,21 +7,25 @@ welcomeSection: >-
   ## A full-stack web developer from Germany
 
 
-  I am passionate about building beautiful web applications, with or withour animations. But I don't just play with JavaScript and CSS. Find out what else I know on my [Technology Radar](/#skills). Everything else I can learn on the fly.
+  I am passionate about building beautiful web applications, with or without animations. But I don't just play with JavaScript and CSS. Find out what else I know on my [Technology Radar](/#skills). Everything else I can learn on the fly.
 aboutSection:
   title: About Me
   text: >-
-    Im a [age] Years old Software developer who is always interested in learning
-    and building software applications. 
+    I'm a [age] Years old Software developer who is always interested in
+    learning and building software applications.
 
 
-    Or that is what you expected to hear from me, right? Yes, I am [age] and learning something new always sounds exciting. But let's face it, reading through seemingly endless, pages of documentation is everything but exciting. It's like getting up from the couch to go for a run. It takes discipline. But it's necessary to get to the amazing part of running through the forest or building an amazing and beautiful piece of software. Where we get to the even better part of improving and growing with every challenge that presents itself. 
+    However, that is probably what every one says, right? But yes, diving into a new Language, Concept or Framework to become a better developer always gets me excited. Even seemingly endless pages of documentation become very attractive if I can use this knowledge to improve my programming skills. It's like getting up from the couch to go for a run. It takes a bit of discipline, but as soon as you get going there is only smooth sailing ahead.
 
 
-    And "always building software applications"? No, I am not interested in burning out. Besides I am way to fascinated by nature to sit all day before a computer. Instead I also sit in front of my aquarium. There I make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my tank. Longer stays abroad are perfect for going to language schools and to learn about a different culture. I did my first language vacation in Malta, where I discovered that my english is already quit good. So spanish became my next goal and I took a six week vacation with spanish lessons in Malaga. However, after this vacation I sadly had to pause my vacation streak with corona running around :( . 
 
 
-    If you think I am an interesting character, you would like to work with, you can always [contact me](/contact).
+    Even though I love programming, I am way too fascinated by nature to sit all day before a computer. Instead, I also go running through the forest or enjoy my aquarium. I always make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my aquarium. Longer stays abroad are perfect for going to language schools and to learning about a different culture. I did my first language vacation in Malta, where I discovered that my English is already quite good. So Spanish became my next goal and I took a six-week vacation with Spanish lessons in Malaga. However, after my stay in Malaga, I sadly had to pause my vacation streak duo to corona.
+
+
+
+
+    If you think I am an interesting character, and you would like to work with me, you can always [contact me](/contact).
   image: /img/Paas Sebastian_pp.png
 skillsSection:
   title: My Technology Radar
@@ -111,6 +115,8 @@ skillsSection:
     - name: Nuxt.js (Vue framework)
       level: I want to learn
     - name: Emmet Abbreviations
+      level: I want to learn
+    - name: Cypress
       level: I want to learn
   databases:
     - name: MySQL
