@@ -224,5 +224,5 @@ careerSection:
       # Berufsbildende Schule Cochem
 
 
-      An der Berufsbildenden Schule Cochem absolvierte ich meine Höhere Berufsfachschule Fachrichtung IT-Systeme. Zusammen mit meiner Ausbildung zum Fachinformatiker für Anwendungsentwicklung habe ich dadürch die Fachhochschulreife erreicht. In der Berufsbildenden Schule Cochem habe ich die Grundlagen der Programmierung in Delphi, C++ und PHP mit HTML und CSS gelernt.
+      I graduated from the Berufsbildende Schule Cochem with a degree in IT systems. Together with my apprenticeship as an Computer Science Expert Subject Area: Software Development I achieved the advanced technical college entrance qualification. At the Berufsbildende Schule Cochem I learned the basics of programming in Delphi, C++ and PHP with HTML and CSS.
 ---
