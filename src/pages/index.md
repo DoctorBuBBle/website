@@ -215,7 +215,7 @@ careerSection:
       * Code documentation in English and German
   - attachment:
       name: School certificate (German)
-      file: /img/fachhochschulreife_zeugnis.pdf
+      file: /img/zeugnis-fachabi.pdf
     timespan:
       from: 2014-09-08T07:00:19.072Z
       to: 2016-06-27T09:00:19.188Z
