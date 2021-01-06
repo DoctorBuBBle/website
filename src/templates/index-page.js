@@ -97,6 +97,10 @@ export const indexPageQuery = graphql`
             level
             name
           }
+          other {
+            level
+            name
+          }
         }
       }
     }
@@ -115,7 +119,7 @@ const TechnologyRadarSection = ({
   toolsAndInfrastructure = [],
   languagesAndFrameworks = [],
   databases = [],
-  others = [],
+  other = [],
   title = "My Technology Radar",
 }) => {
   const sectionRef = useRef();
@@ -147,7 +151,7 @@ const TechnologyRadarSection = ({
   const selectDB = () => setSelected({ nc: "DB", data: databases });
   const selectTI = () =>
     setSelected({ nc: "TI", data: toolsAndInfrastructure });
-  const selectO = () => setSelected({ nc: "O", data: others });
+  const selectO = () => setSelected({ nc: "O", data: other });
   const getSelectedClass = (nc) =>
     selected.nc === nc ? "selected" : undefined;
   const techsByLevel = selected.data

@@ -91,13 +91,12 @@ const LinesOfRadarSignals = () => {
   return Array.from({ length: numberOfSignalsLines }).map((place, index) => {
     let indexOfFirstSignal = indexOfLastSignal - signalsPerLine -1 ;
     if (indexOfFirstSignal < 0) indexOfFirstSignal = 0;
+    const radius = r - (availableWidthForSignals / numberOfSignalsLines * (index + 1));
 
     const comp = (
       <LineOfRadarSignals
-        key={indexOfFirstSignal + ',' + indexOfLastSignal}
-        lineRadius={
-          r - (availableWidthForSignals / numberOfSignalsLines * (index + 1))
-        }
+        key={radius}
+        lineRadius={radius}
         signals={signals.slice(indexOfFirstSignal, indexOfLastSignal)}
       />
     );

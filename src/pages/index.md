@@ -137,7 +137,7 @@ skillsSection:
     - name: NodeJS
       level: I am confident
   other:
-    - name: Flux
+    - name: Flux (Application architecture for building user interfaces)
       level: I want to learn
     - name: REST
       level: I am confident
