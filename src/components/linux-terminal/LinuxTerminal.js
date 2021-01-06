@@ -90,7 +90,7 @@ LinuxTerminal.defaultProps = {
 };
 
 function LinuxTerminalSVG({ rows }) {
-  const [host, setHost] = useState('localhost');
+  const host = 'localhost';
   const user = `guest@${host}`;
 
   /*
