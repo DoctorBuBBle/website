@@ -1,11 +1,14 @@
 @import "../colors.scss";
 
+.layout-content section.welcome-section {
+  padding: 0;
+}
+
 .welcome-section {
   background-image: url("/img/linux-background.svg");
   background-size: cover;
   overflow: hidden;
-  height: 1000px;
-  max-height: 100vh;
+  height: 100vh;
   min-height: 500px;
   position: relative;
 

@@ -93,9 +93,11 @@ function LinuxTerminalSVG({ rows }) {
   const [host, setHost] = useState('localhost');
   const user = `guest@${host}`;
 
+  /*
   useEffect(() => {
     setHost(window.location.hostname);
   }, [host]);
+  */
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 295.11">
