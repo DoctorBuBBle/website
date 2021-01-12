@@ -11,17 +11,20 @@ welcomeSection: >-
 aboutSection:
   title: About Me
   text: >-
-    I'm a [age] Years old Software developer who is always interested in
-    learning and building software applications.
+    Hi, I am Sebastian. I'm a \[age] Years old full-stack Software developer
+    with an insane hunger for new knowledge.
 
 
-    However, that is probably what every one says, right? But yes, diving into a new Language, Concept or Framework to become a better developer always gets me excited. Even seemingly endless pages of documentation become very attractive if I can utilize this knowledge to improve my programming skills. It's like getting up from the couch to go for a run. It requires a bit of discipline, but as soon as you get going there is only smooth sailing ahead.
+    But I am not just passionate about learning new programming concepts, languages, frameworks or patterns. I also love to know the application of my software solutions. May that be the process of inspecting bottles for foreign objects or real estate valuation. Not knowing why I have to solve a problem is hard to bear for me. 
 
 
-    Even though I love programming, I am way too fascinated by nature to sit all day before a computer. Instead, I also go running through the forest or enjoy my aquarium. I always make sure that my plants and animals are flourishing. But normally that is not a problem. I can even be on long vacation trips without having to worry about my aquarium. Longer stays abroad are perfect for going to language schools and to learning about a different culture. I did my first language vacation in Malta, where I discovered that my English is already quite good. So Spanish became my next goal and I took a six-week vacation with Spanish lessons in Malaga. However, after my stay in Malaga, I sadly had to pause my vacation streak duo to corona.
+    In my free time I am currently learning Spanish and extending my Math knowledge. At the same time I try to constantly improve my learning technique and approaches to become more time efficient in the process. My favorite book about learning is currently "[A mind for numbers](https://www.amazon.de/-/en/Barbara-Oakley-ebook/dp/B00G3L19ZU)" by Ph.D. Barbara Oakley. 
 
 
-    If you think I am an interesting character, and you would like to work with me, you can always [contact me](/contact).
+    I always strive to deeply understand a topic and to avoid the illusion of competence by focusing on the areas I find the most difficult. 
+
+
+    I am always interested in new job opportunities and challenges so don't hesitate to [contact me](/contact).
   image: /img/Paas Sebastian_pp.png
 skillsSection:
   title: My Technology Radar
@@ -224,5 +227,5 @@ careerSection:
       # Berufsbildende Schule Cochem
 
 
-      I graduated from the Berufsbildende Schule Cochem with a degree in IT systems. Together with my apprenticeship as an Computer Science Expert Subject Area: Software Development I achieved the advanced technical college entrance qualification. At the Berufsbildende Schule Cochem I learned the basics of programming in Delphi, C++ and PHP with HTML and CSS.
+      I graduated from the Berufsbildende Schule Cochem with a degree in IT systems. Together with my apprenticeship as a Computer Science Expert for Software Development I achieved the advanced technical college entrance qualification. At the Berufsbildende Schule Cochem I learned the basics of programming in Delphi, C++ and PHP with HTML and CSS.
 ---
