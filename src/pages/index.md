@@ -11,8 +11,8 @@ welcomeSection: >-
 aboutSection:
   title: About Me
   text: >-
-    Hi, I am Sebastian. I'm a \[age] Years old full-stack Software developer
-    with an insane hunger for new knowledge.
+    Hi, I am Sebastian. I'm a [age] Years old full-stack Software developer with
+    an insane hunger for new knowledge.
 
 
     But I am not just passionate about learning new programming concepts, languages, frameworks or patterns. I also love to know the application of my software solutions. May that be the process of inspecting bottles for foreign objects or real estate valuation. Not knowing why I have to solve a problem is hard to bear for me. 
