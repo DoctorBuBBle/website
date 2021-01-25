@@ -78,7 +78,7 @@ skillsSection:
     - name: Jersey
       level: I am confident
     - name: Redux
-      level: I want to learn
+      level: I am on my way to beeing confident
     - name: ReasonML
       level: I want to learn
     - name: Elixir
