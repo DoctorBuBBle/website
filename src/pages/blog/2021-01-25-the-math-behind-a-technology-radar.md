@@ -16,7 +16,7 @@ You can find my project to this blog post [here](https://github.com/DoctorBuBBle
 
 # Why as SVG?
 
-We have two options how to draw our Technology Radar. As SVG or with the Canvas API. The power of the canvas API comes into play when redrawing is needed frequently. For example in browser games that refresh every frame. Our Technology Radar, on the other hand, we only draw once with the given properties. So our radar is rarely redrawn, which is why SVG makes more sense in our case.
+We have two options how to draw our Technology Radar. As SVG or with the Canvas API. The power of the canvas API comes into play when redrawing is needed frequently. For example a browser games is redrawevery frame. Our Technology Radar, on the other hand, is only drawn once with the given properties. So our radar is rarely redrawn, which is why SVG makes more sense in our case.
 
 # How to build the Technology Radar
 
@@ -26,7 +26,6 @@ For the curvature of the circle we have several options. We can draw the curvatu
 However, I will only discuss drawing the curvature with the Bézier Curve, since after a quick google search, you can find a [Stackoverflow](https://stackoverflow.com/questions/5736398/how-to-calculate-the-svg-path-for-an-arc-of-a-circle#answer-18473154) article with ready-to-use code for the Elliptical Arc Curve.
 But before we can discuss the curvature of the circles, how do we get to the starting point of our curvature? 
 
-## 
 Now how do we calculate our starting point?
 
 We want to know the x and y coordinates for our starting point. What do we know about the ring? If we divide our Technology Radar evenly into all segments we know the radian for each segment which is also the radian of our rings. If we now knew the radius, we could convert the polar coordinates into Cartesian coordinates.
@@ -67,7 +66,7 @@ Now we know the radius of each ring and the radian. Lets calculate the x and y c
 
 `y = radius * cos(radian)`
 
-For the starting point is the radian the radian we need to travel from the start of the circle to the segment we are calculating. For the end point the radian is the radian we need to travel from the start plus the radian of the segment we are calculating the point for. 
+The radian for the starting point is the radian we need to travel from the start of the circle to the segment we are calculating. The radian for the end point is the radian we need to travel from the start of the circle plus the radian of the segment we are calculating the point for. 
 
 So far so good, but the cartesian coordinate system starts with 0,0 in the center. Our SVG start with its coordinates in the upper left corner. To translate our cartesian coordinates into SVG coordinates we still need to add the x coordinate of the center and subtract the y coordinate of the center from our result. In the end our formula looks like this:
 
@@ -91,7 +90,7 @@ The starting point for the curvature is the point we are currently at. That mean
 
 ![C command visualized](/img/how-to-draw-ring.jpg "C command visualized")
 
-Now how do we calculate the positions of our control points? From this [Stackoverflow](https://stackoverflow.com/questions/1734745/how-to-create-circle-with-b%c3%a9zier-curves) article we can take the formula 4/3  *tan(PI / (number of segments*  2)) to find the ratio of the radius to the distance of the control points. This means the result multiplied by the radius gives us the distance from the control point to the point it controls. However, we do not know the x and y coordinates of the control point yet. Assuming the distance from the control point is the opposite side and the radius of the ring is the adjacent side of a triangle. Then we can calculate an angle and the hypotenuse which we can use as radius and radian. Radian and radius? We already know this from our start and end point. We can convert these polar coordinates into Cartesian coordinates to determine the x and y coordinates. The whole thing looks then graphically represented like this:
+Now how do we calculate the positions of our control points? From this [Stackoverflow](https://stackoverflow.com/questions/1734745/how-to-create-circle-with-b%c3%a9zier-curves) article we can take the formula 4/3  *tan(PI / (number of segments*  2)) to find the ratio of the radius to the distance of the control points. This means the result multiplied by the radius gives us the distance from the control point to the point it controls. However, we do not know the x and y coordinates of the control point yet. Assuming the distance from the control point is the opposite side and the radius of the ring is the adjacent side of a triangle. Then we can calculate an angle and the hypotenuse which we can use as radius and radian. Radian and radius? We already know this from our start and end point. We can convert these polar coordinates into Cartesian coordinates to determine the x and y coordinates. Visualized this looks like the following:
 
 ![Control point calculation visualized](/img/how-to-calc-bezier-curve-controll-points.jpg "Control point calculation visualized")
 
