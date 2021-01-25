@@ -11,8 +11,8 @@ welcomeSection: >-
 aboutSection:
   title: About Me
   text: >-
-    Hi, I am Sebastian. I'm a [age] Years old full-stack Software developer with
-    an insane hunger for new knowledge.
+    Hi, I am Sebastian. I'm a \[age] Years old full-stack Software developer
+    with an endless curiosity.
 
 
     But I am not just passionate about learning new programming concepts, languages, frameworks or patterns. I also love to know the application of my software solutions. May that be the process of inspecting bottles for foreign objects or real estate valuation. Not knowing why I have to solve a problem is hard to bear for me. 
@@ -24,7 +24,7 @@ aboutSection:
     I always strive to deeply understand a topic and to avoid the illusion of competence by focusing on the areas I find the most difficult. 
 
 
-    I am always interested in new job opportunities and challenges so don't hesitate to [contact me](/contact).
+    I am currently interested in new job opportunities and challenges so don't hesitate to [contact me](/contact).
   image: /img/Paas Sebastian_pp.png
 skillsSection:
   title: My Technology Radar
@@ -178,7 +178,7 @@ careerSection:
       # Sprengnetter Immobilien&shy;bewertung GMBH
 
 
-      [Sprengnetter Immobilienbewertung](https://www.sprengnetter.de/) is a modern, medium-sized company with around 250 employees. With almost 40 years of market experience, Sprengnetter is one of the most important experts in German for real estate valuation. The complete range of services for real estate valuation is unique in Europe and includes appraisal and valuation services, consulting services, software solutions, technical literature, market research, education and training including expert certification according to ISO 17024. The major players in the German and international lending industry as well as many thousands of individual players in the real estate industry rely on these solutions. The company has several branches in Germany and is also active in Austria.
+      [Sprengnetter Immobilienbewertung](https://www.sprengnetter.de/) is a modern, medium-sized company with around 250 employees. With almost 40 years of market experience, Sprengnetter is one of the most important experts in Germany for real estate valuation. The complete range of services for real estate valuation is unique in Europe and includes appraisal and valuation services, consulting services, software solutions, technical literature, market research, education and training including expert certification according to ISO 17024. The major players in the German and international lending industry as well as many thousands of individual players in the real estate industry rely on these solutions. The company has several branches in Germany and is also active in Austria.
 
       <br/>
 
