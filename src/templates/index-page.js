@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import "./index-page.scss";
 import LinuxTerminal from "../components/linux-terminal/LinuxTerminal";
 import { gsap } from "gsap";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import moment from "moment";
 import { MarkdownAsHTML } from "../components/Content";
 import Button, { GetInTouchButton, PrimaryButton } from "../components/Button";
@@ -227,6 +227,7 @@ const TechnologyRadarSection = ({
             onSignalMouseEnter={onSignalMouseEnter}
             onSignalMouseLeave={onSignalMouseLeave}
           />
+          <Link style={{textAlign: "center"}} to="blog/2021-01-25-the-math-behind-a-technology-radar/">Do you want to know how I build this technology radar?</Link>
         </div>
       </article>
     </section>
