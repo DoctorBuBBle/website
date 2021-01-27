@@ -91,7 +91,7 @@ const Navbar = () => {
         <div className="navbar-brand">
           <h1><Link to="/">Paas</Link></h1>
           <div className="sub-title">
-            <h2>Far better than a platform as a service.</h2>
+            <h2>Far better than a platform as a service</h2>
           </div>
           <div className="navbar-blog-link">
             <Link to="/blog">Blog</Link>
