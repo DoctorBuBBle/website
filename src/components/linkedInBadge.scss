@@ -1,0 +1,66 @@
+@use "sass:color";
+
+$linkedInGrey: rgb(48, 51, 54);
+$linkedInBlue: #0073b1;
+
+.LI-badge {
+  background-color: $linkedInGrey;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  text-align: center;
+  font-size: .9rem;
+  width: 250px;
+
+  a::after {
+      content: none;
+  }
+
+  padding-bottom: 20px;
+}
+
+.LI-header {
+  width: 100%;
+
+  .LI-header-background {
+    background-image: url("data:image/png;base64,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");
+    height: 100px;
+    width: 100%;
+  }
+
+  img {
+    margin-top: -55px;
+    border-radius: 50%;
+    border: 5px solid $linkedInGrey;
+  }
+}
+
+.LI-name {
+  .LI-simple-link {
+    font-size: 1.2rem;
+  }
+
+  margin-bottom: 20px;
+}
+
+.LI-body {
+    .LI-button-link {
+        display: block;
+        padding: .5rem 1rem;
+        background-color: $linkedInBlue;
+        width: max-content;
+        margin: 0 auto;
+        border-radius: 2px;
+
+        &:hover {
+            background-color: #006cb1;
+        }
+    }
+
+    margin-bottom: 20px;
+}
+
+.LI-logo {
+    img {
+        width: 100px;
+    }
+}

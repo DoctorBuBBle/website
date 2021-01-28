@@ -11,11 +11,11 @@ welcomeSection: >-
 aboutSection:
   title: About Me
   text: >-
-    Hi, I am Sebastian. I'm a \[age] Years old full-stack Software developer
+    Hi, I am Sebastian. I'm a [age] Years old full-stack Software developer
     with an endless curiosity.
 
 
-    But I am not just passionate about learning new programming concepts, languages, frameworks or patterns. I also love to know the application of my software solutions. May that be the process of inspecting bottles for foreign objects or real estate valuation. Not knowing why I have to solve a problem is hard to bear for me. 
+    But I am not just passionate about learning new programming concepts, languages, frameworks or patterns. I also love to know the application of my software solutions. May that be the process of inspecting bottles for quality issues or real estate valuation. Not knowing why I have to solve a problem is hard to bear for me. 
 
 
     In my free time I am currently learning Spanish and extending my Math knowledge. At the same time I try to constantly improve my learning technique and approaches to become more time efficient in the process. My favorite book about learning is currently "[A mind for numbers](https://www.amazon.de/-/en/Barbara-Oakley-ebook/dp/B00G3L19ZU)" by Ph.D. Barbara Oakley. 
@@ -148,7 +148,7 @@ careerSection:
       # HEUFT SYSTEMTECHNIK GMBH
 
 
-      [HEUFT SYSTEMTECHNIK GmbH](https://www.heuft.com) is a global company in the field of control and inspection technology for the beverage, food and pharmaceutical industries. Its devices ensure that dangers such as foreign objects are identified during the filling process and that faulty containers are safely rejected so that only flawless products reach the market. HEUFT works towards this goal of consumer safety with over 1,200 employees at 19 locations worldwide.
+      [HEUFT SYSTEMTECHNIK GmbH](https://www.heuft.com) is a global company in the field of control and inspection technology for the beverage, food and pharmaceutical industries. Its devices ensure that dangers such as impurities are identified during the filling process and that faulty containers are safely rejected so that only flawless products reach the market. HEUFT works towards this goal of consumer safety with over 1,200 employees at 19 locations worldwide.
 
       <br/>
 

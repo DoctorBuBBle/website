@@ -6,29 +6,39 @@ import menuLinks from "./MenuLinks";
 import { GetInTouchButton } from "./Button";
 
 const Navbar = () => {
-  const navigationItems = menuLinks.map((link) => {
-    if (link.get("to") === "/contact") {
-      return <GetInTouchButton key={link.get("to")} />;
-    }
-    if (link.get("isSocialLink") === true) {
-      return (
-        <a
-          key="github"
-          className="navbar-item github-link"
-          href={link.get("to")}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.get("label")}
-        </a>
-      );
-    }
+  const navigationItems = menuLinks.reduce(
+    (links, link) => {
+      if (link.get("to") === "/contact") {
+        links[0].push(<GetInTouchButton key={link.get("to")} />);
+      }
+      else if (link.get("isSocialLink") === true) {
+        links[1].push(
+          <a
+            key={link.get("to")}
+            href={link.get("to")}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.get("label")}
+          </a>
+        );
+      } else {
+        links[0].push(
+          <Link key={link.get("to")} className="navbar-item" to={link.get("to")}>
+            {link.get("label")}
+          </Link>
+        );
+      }
 
-    return (
-      <Link key={link.get("to")} className="navbar-item" to={link.get("to")}>
-        {link.get("label")}
-      </Link>
-    );
+      return links;
+    },
+    [[], []]
+  ).map((links, index) => {
+    if (index) {
+      return <span className="navbar-item social-links">{links}</span>;
+    } else {
+      return links.flat();
+    }
   });
 
   const navRef = useRef();
@@ -44,10 +54,10 @@ const Navbar = () => {
     navbarMenu.style.height = 0;
 
     const navbarItems = navbarMenu.querySelectorAll(
-      ".navbar-item:not(.primary-button):not(.github-link)"
+      ".navbar-item:not(.primary-button):not(.social-links)"
     );
     const buttons = navbarMenu.querySelectorAll(
-      ".primary-button, .github-link"
+      ".primary-button, .social-links"
     );
 
     menuTimeline.current = gsap
@@ -104,7 +114,6 @@ const Navbar = () => {
           className="navbar-burger"
           data-target="navMenu"
           onClick={toggleHamburger}
-          onKeyDown={toggleHamburger}
         >
           <span />
           <span />
@@ -113,7 +122,15 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-menu white-block">
-        <button className="content" onClick={toggleHamburger}>{navigationItems}</button>
+        <div
+          className="content"
+          role="button"
+          tabIndex="0"
+          onClick={toggleHamburger}
+          onKeyDown={toggleHamburger}
+        >
+          {navigationItems}
+        </div>
       </div>
     </nav>
   );

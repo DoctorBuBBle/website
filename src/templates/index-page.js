@@ -12,7 +12,8 @@ import Timeline from "../components/Timeline";
 import { isEmpty } from "lodash";
 import TechnologyRadar from "../components/Technology";
 import { OrderedMap } from "immutable";
-import { debounce } from 'lodash'
+import { debounce } from "lodash";
+import LinkedInBadge from "../components/LinkedInBadge";
 
 export const IndexPageTemplate = ({ welcome, about, skills, career }) => {
   return (
@@ -34,7 +35,7 @@ const IndexPage = (data) => {
 
   useEffect(() => {
     window.onresize = reloadPage;
-  })
+  });
 
   return (
     <Layout>
@@ -55,56 +56,63 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const indexPageQuery = graphql`
-  query IndexPageQuery {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        welcomeSection
-        careerSection {
-          attachment {
-            name
-            file {
-              base
-            }
-          }
-          image {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
-          text
-          timespan {
-            from
-            to
+query IndexPageQuery {
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      welcomeSection
+      careerSection {
+        attachment {
+          name
+          file {
+            base
           }
         }
-        aboutSection {
-          text
-          title
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
         }
-        skillsSection {
-          databases {
-            level
-            name
+        text
+        timespan {
+          from
+          to
+        }
+      }
+      aboutSection {
+        text
+        title
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
           }
-          languagesAndFrameworks {
-            level
-            name
-          }
-          title
-          toolsAndInfrastructure {
-            level
-            name
-          }
-          other {
-            level
-            name
-          }
+        }
+      }
+      skillsSection {
+        databases {
+          level
+          name
+        }
+        languagesAndFrameworks {
+          level
+          name
+        }
+        title
+        toolsAndInfrastructure {
+          level
+          name
+        }
+        other {
+          level
+          name
         }
       }
     }
   }
+}
 `;
 
 const TechnologyRadarWaves = [
@@ -227,7 +235,12 @@ const TechnologyRadarSection = ({
             onSignalMouseEnter={onSignalMouseEnter}
             onSignalMouseLeave={onSignalMouseLeave}
           />
-          <Link style={{textAlign: "center"}} to="blog/2021-01-25-the-math-behind-a-technology-radar/">Do you want to know how I build this technology radar?</Link>
+          <Link
+            style={{ textAlign: "center" }}
+            to="blog/2021-01-25-the-math-behind-a-technology-radar/"
+          >
+            Do you want to know how I build this technology radar?
+          </Link>
         </div>
       </article>
     </section>
@@ -318,7 +331,7 @@ const AboutSection = ({ title, image, text = "" }) => {
       <div>
         <h1 className="section-title">{title}</h1>
         <div className="about-content">
-          {/*<img className="about-me-image" src={getImageSrc(image)} alt="Me" />*/}
+          <LinkedInBadge image={image}/>
           <MarkdownAsHTML
             className="about-me-text"
             markdown={text.replace(/\[age\]/g, getAge())}

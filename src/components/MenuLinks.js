@@ -1,5 +1,6 @@
 import React from "react";
 import github from "../img/github-icon.svg";
+import linkedIn from "../img/linked-in-icon.svg";
 import { List, Map } from "immutable";
 
 const LINK_TYPES = {
@@ -26,6 +27,12 @@ const links = List.of(
     to: "https://github.com/DoctorBuBBle",
     label: <img src={github} alt="Github" />,
     type: LINK_TYPES.externalLink,
+  }),
+  Map({
+    isSocialLink: true,
+    to: "https://www.linkedin.com/in/sebastian-paas-b50541205/",
+    label: <img src={linkedIn} alt="LinkedIn" />,
+    type: LINK_TYPES.externalLink
   })
 );
 

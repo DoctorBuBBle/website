@@ -138,7 +138,7 @@
     }
 
     .primary-button,
-    .navbar-item.github-link {
+    .navbar-item.social-links {
       translate: 0 -15%;
       margin-top: 30px;
       opacity: 0;
@@ -146,8 +146,13 @@
       img {
         height: 70px;
       }
-      &::after {
-        content: none;
+      
+      a {
+        margin-right: 10px;
+
+        &::after {
+          content: none;
+        }
       }
     }
   }
