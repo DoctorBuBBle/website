@@ -5,32 +5,32 @@ import { Link } from "gatsby";
 import menuLinks from "./MenuLinks";
 import { GetInTouchButton } from "./Button";
 
-const navigationItems = menuLinks.map((link) => {
-  if (link.get("to") === "/contact") {
-    return <GetInTouchButton key={link.get("to")} />;
-  }
-  if (link.get("isSocialLink") === true) {
-    return (
-      <a
-        key="github"
-        className="navbar-item github-link"
-        href={link.get("to")}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {link.get("label")}
-      </a>
-    );
-  }
-
-  return (
-    <Link key={link.get("to")} className="navbar-item" to={link.get("to")}>
-      {link.get("label")}
-    </Link>
-  );
-});
-
 const Navbar = () => {
+  const navigationItems = menuLinks.map((link) => {
+    if (link.get("to") === "/contact") {
+      return <GetInTouchButton key={link.get("to")} />;
+    }
+    if (link.get("isSocialLink") === true) {
+      return (
+        <a
+          key="github"
+          className="navbar-item github-link"
+          href={link.get("to")}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link.get("label")}
+        </a>
+      );
+    }
+
+    return (
+      <Link key={link.get("to")} className="navbar-item" to={link.get("to")}>
+        {link.get("label")}
+      </Link>
+    );
+  });
+
   const navRef = useRef();
   const menuTimeline = useRef();
   const menuBurgerTimeline = useRef();
@@ -89,7 +89,9 @@ const Navbar = () => {
     >
       <div className="navbar-control">
         <div className="navbar-brand">
-          <h1><Link to="/">Paas</Link></h1>
+          <h1>
+            <Link to="/">Paas</Link>
+          </h1>
           <div className="sub-title">
             <h2>Far better than a platform as a service</h2>
           </div>
@@ -111,7 +113,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-menu white-block">
-        <div className="content">{navigationItems}</div>
+        <button className="content" onClick={toggleHamburger}>{navigationItems}</button>
       </div>
     </nav>
   );
