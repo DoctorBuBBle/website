@@ -99,6 +99,10 @@ skillsSection:
       level: I want to learn
     - name: Cypress
       level: I am on my way to beeing confident
+    - name: Haskell
+      level: I want to learn
+    - name: TypeScript
+      level: I know the fundametals
   databases:
     - name: MySQL
       level: I am confident

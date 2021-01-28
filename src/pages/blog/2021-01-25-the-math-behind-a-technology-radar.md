@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: The Math behind a Technology Radar
+title: The Technology behind a Technology Radar
 date: 2021-01-25T09:13:42.632Z
 description: "In this Blog post I will explore the math and technologies that I
   used to build a Technology Radar with React. "
@@ -16,7 +16,7 @@ You can find my project to this blog post [here](https://github.com/DoctorBuBBle
 
 # Why as SVG?
 
-We have two options how to draw our Technology Radar. As SVG or with the Canvas API. The power of the canvas API comes into play when redrawing is needed frequently. For example a browser games is redrawevery frame. Our Technology Radar, on the other hand, is only drawn once with the given properties. So our radar is rarely redrawn, which is why SVG makes more sense in our case.
+We have two options how to draw our Technology Radar. As SVG or with the Canvas API. The power of the canvas API comes into play when redrawing is needed frequently. For example a browser game that is redrawn every frame. Our Technology Radar, on the other hand, is only drawn once with the given properties. SVG starts to slow down the brower around 3000 nodes or 1000 nodes if their are animated. But I don't think we will draw so many nodes. Which is why SVG makes more sense in our case.
 
 # How to build the Technology Radar
 
@@ -98,6 +98,6 @@ As already mentioned, the elliptical arc curve approach is much simpler and give
 
 # How to position the Technologies on the radar
 
-How you position the Technologies on the radar is in the end a question of taste. You can position them totally random or distribute them equally across their ring. I opted for something in between. I  wanted them to fill out the ring equally but still a little bit random. So I divided them equally on the radian but made the radius a random number between the radius of the last ring and the radius of the ring they are positioned in. The only exception is the center. In the center I had the problem that the technologies with a small radius would be outside because of their radian. Since this project took way longer than I wanted it to, I simply made sure that also the ring in the center had a minimum radius were this problem would not be visible.
+How you position the Technologies on the radar is in the end a question of taste. You can position them totally random or distribute them equally across their ring. I opted for something in between. I  wanted them to fill out the ring equally but still a little bit random. So I divided them equally on the radian but made the radius a random number between the radius of the last ring and the radius of the ring they are positioned in. The only exception is the center. In the center I had the problem that the technologies with a small radius would be outside because of their radian. The simplest and fasted solution was to simply give the ring in the center also a minimum radius for the technologies. This prevents the problem from beeing visible.
 
 ![finished technology radar](/img/finished-technology-radar.png "finished technology radar")
