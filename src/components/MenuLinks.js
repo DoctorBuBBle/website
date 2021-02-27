@@ -24,7 +24,7 @@ const links = List.of(
   Map({ to: "/contact", label: "Get in touch", type: LINK_TYPES.pageLink }),
   Map({
     isSocialLink: true,
-    to: "https://github.com/DoctorBuBBle",
+    to: "https://github.com/DoctorNova",
     label: <img src={github} alt="Github" />,
     type: LINK_TYPES.externalLink,
   }),
